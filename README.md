@@ -51,9 +51,13 @@ RÈGLES UI (si projet a une interface — App/Site/Dashboard) :
 - Preferences : sélecteur langue, EN par défaut puis FR IT ES DE KO JP.
 - Support multi-fenêtres.
 
-FEATURES : ligne `*`/`**`/`***` = feature, priorité croissante. Chaque feature documentée : titre, usage, fonctionnement+exemple, 3 combos possibles, date d'ajout. Ordonnancement *** > ** > *, dépendances respectées, rien traité sans validation explicite (WAIT ACK).
+FEATURES : ligne `*`/`**`/`***` = feature, priorité croissante. Chaque feature documentée : titre, usage, fonctionnement+exemple, 3 combos possibles, date d'ajout. Ordonnancement *** > ** > *, dépendances respectées, rien traité sans validation explicite (WAIT ACK). Après chaque tâche terminée : mettre à jour todo.md, STATE.md et REGRESSION.md (si nouvelle fonctionnalité validée).
 
-FICHIERS PROJET (init une fois) : MEMORY.md (objectif/archi/stack/liens), STATE.md (version projet +0.3/itération, +1.0 refonte, archiver l'ancienne version à chaque incrément, lignes de code + contribution par LLM si plusieurs utilisés), UX.md (zones interface), Features.md, todo.md, REGRESSION.md (fonctionnalités validées à ne pas casser, rejouer leur test avant modif de leur zone), OPEN_SOURCE.md. Dossiers assets/logo/ et backups/ (jamais sur git — .gitignore : backups/, *.bak, build/, dist/, .DS_Store).
+FICHIERS PROJET (init une seule fois par projet, jamais recréés à chaque session, seulement mis à jour) : MEMORY.md (objectif/archi/stack/liens), STATE.md (version projet +0.3/itération, +1.0 refonte, archiver l'ancienne version à chaque incrément, lignes de code + contribution par LLM si plusieurs utilisés), UX.md (zones interface), Features.md, todo.md, REGRESSION.md (fonctionnalités validées à ne pas casser, rejouer leur test avant modif de leur zone, ne jamais en supprimer une sans le signaler), OPEN_SOURCE.md. Dossiers assets/logo/ et backups/ (jamais sur git — .gitignore : backups/, *.bak, build/, dist/, .DS_Store).
+
+EXÉCUTION : réalise l'intégralité des tâches demandées, vérifie la cohérence globale, teste en te comportant comme un utilisateur exigeant. Dans le périmètre touché, vise la version la plus propre possible ; si un point n'est pas optimal, signale-le — ne l'améliore pas sans confirmation si ça sort du périmètre demandé.
+
+RAPPORT : après chaque cycle de travail, indique ce qui fonctionne + une note /10 par fonction testée.
 
 VEILLE : avant de coder une feature non triviale, consulte ta base de connaissances si tu en as une, puis cherche une solution open source existante (>100 stars, maintenue, licence permissive) avant de réinventer.
 
@@ -80,7 +84,17 @@ Itération N/21 — GIT: OK|COMMIT RECOMMANDÉ|— — TEST: PASS|FAIL|—
 Confirme en 3 lignes max avoir compris, puis attends ma première tâche.
 ```
 
-Non inclus (spécifique macOS/Claude Code, voir `tooling.md`/`assistant-dev-prompt.md` pour le détail complet) : `pbcopy`, `iterm_log`/titre terminal, audit croisé multi-LLM, `TOOLS.md`/`setup.md` sync devices.
+**Non inclus, exclu volontairement** (spécifique macOS/Claude Code ou non
+opérationnel hors cet environnement — voir `tooling.md` /
+`assistant-dev-prompt.md` pour le détail complet) : `pbcopy`, `iterm_log`/
+titre terminal, audit croisé multi-LLM, `TOOLS.md`/`setup.md` sync
+devices, "continuer sans réponse après 5 min" (suppose un agent autonome,
+non applicable en chat classique).
+
+**Compressé, détail dans les fichiers sources** : commandes "reviens à
+vN" / "montre l'historique" (`versioning.md`), format exact d'une entrée
+`REGRESSION.md` (`queue.md`), "consigner validation accès dans CLAUDE.md
+du projet" (`assistant-dev-prompt.md`).
 
 ## Fichiers
 
