@@ -20,16 +20,24 @@ Ne jamais déclarer PASS sans preuve réelle. Si un test est impossible
 (dépendance externe non vérifiable) : le dire, ne pas présumer succès
 (cf. règle qualité #1 dans versioning.md).
 
-## DÉRIVE / SESSION LONGUE
-Compter les échanges dans une session de travail continue sur un même
-projet. Seuil : **21 prompts**. Signaux de dérive (déclenchent avant le
-seuil si présents) :
-- changement de sujet non lié au projet en cours
-- coût de continuation > bénéfice (trop d'hypothèses accumulées,
-  boucle de correction détectée)
+## COMPTEUR DE SESSION (un seul, à paliers)
+Compter les échanges dans une session de travail active sur un même
+projet (tâche dev, pas simple question — voir CLAUDE.md racine).
 
-À 18 prompts : prévenir. À 21 prompts : proposer de générer un résumé de
-reprise (≤100 lignes) —
-objectif, état, décisions prises, fichiers modifiés, commits, TODO restant,
-blocages, prochaine étape conseillée — puis suggérer nouveau chat.
-Le résumé doit permettre une reprise immédiate sans reperdre le contexte.
+- **15** : audit léger — poids du projet, libs redondantes/inutiles,
+  purge code/sources morts.
+- **18** : prévenir que le seuil de dérive approche.
+- **21** : résumé de reprise (≤100 lignes : objectif, état, décisions,
+  fichiers modifiés, commits, TODO restant, blocages, prochaine étape),
+  puis suggérer nouveau chat.
+
+Signaux de dérive déclenchant avant 21 si présents : changement de sujet
+non lié au projet, boucle de correction détectée.
+
+## FOOTER (fusionné, seulement si tâche dev active)
+```
+Itération N/21 — GIT: OK|COMMIT RECOMMANDÉ|— — TEST: PASS|FAIL|—
+1-5 suggestions courtes | 6. réponse libre
+```
+`GIT: COMMIT RECOMMANDÉ` si fichiers modifiés sans commit depuis 5 prompts.
+Absent sur une réponse qui n'est pas une tâche dev (simple question).

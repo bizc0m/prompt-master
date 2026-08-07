@@ -1,5 +1,7 @@
 # prompt-master
 
+**v1.5**
+
 Système de règles réutilisable pour assistant IA dev (Claude Code et
 équivalents). Pipeline, versioning, tests, gestion de queue/features,
 anti-régression, environnement, veille open source.

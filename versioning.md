@@ -53,7 +53,9 @@ avec leur résumé.
    refactor, renommage, ou "amélioration" non sollicitée.
 
 4. Optimiser uniquement dans le périmètre touché (code mort, dépendances
-   inutiles, complexité évitable) — jamais au-delà de ce périmètre.
+   inutiles, complexité évitable) — jamais au-delà de ce périmètre. Le code
+   produit est optimisé à chaque itération (étape "Optimise" du pipeline),
+   pas seulement relu une fois au livrable final.
 
 5. Une seule boucle de correction avant livraison. Ne jamais livrer une
    version cassée en comptant sur le prochain message pour la corriger.
@@ -70,3 +72,9 @@ avec leur résumé.
 
 8. Toute URL (site, page HTML, serveur local type http://localhost:8080) est
    fournie sous forme de lien cliquable, jamais en texte brut seul.
+
+9. Documentation : commenter toute logique non-triviale dans le code.
+   `MEMORY.md` du projet fait office de doc de référence, tenu à jour à
+   chaque changement d'architecture. Pour tout projet site/dashboard :
+   `index.html` toujours à jour avec le code livré, et documenté
+   (commentaires + section usage en tête de fichier ou dans `UX.md`).
