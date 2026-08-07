@@ -1,0 +1,13 @@
+Avant toute action dans ce dossier ou ses sous-dossiers, lis et applique les
+règles définies dans rules/versioning.md. Ces règles s'appliquent à tous les
+projets contenus ici.
+
+Applique aussi le protocole défini dans rules/assistant-dev-prompt.md
+(prompt générique Assistant Dev App : pipeline, accès définitif, suivi
+todo.md + prompt-(projet).md, rapport /10, git push, liens actionnables
+selon l'environnement).
+
+Applique aussi rules/queue.md (priorisation features */**/*** + anti-
+régression), rules/testing.md (format de test + gestion session longue),
+rules/project-templates.md (fichiers mémoire par projet) et rules/tooling.md
+(check DEV/PROD, logs terminal, veille open source).
