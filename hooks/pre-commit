@@ -1,0 +1,16 @@
+#!/bin/bash
+# Bloque tout commit contenant le username réel du poste (repo public).
+# Voir README.md — historique de ce fix.
+
+PATTERN="/Users/JOB"
+
+MATCHES=$(git diff --cached --name-only -z | grep -zv '^hooks/pre-commit$' | xargs -0 grep -l "$PATTERN" 2>/dev/null)
+
+if [ -n "$MATCHES" ]; then
+  echo "❌ COMMIT BLOQUÉ — chemin perso détecté ($PATTERN) dans :"
+  echo "$MATCHES"
+  echo "Ce repo est public. Génériser (~/#DEV) avant de commit."
+  exit 1
+fi
+
+exit 0

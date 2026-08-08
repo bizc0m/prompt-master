@@ -118,6 +118,12 @@ Copier `CLAUDE.md.example` en `CLAUDE.md` à la racine du projet (ou dossier
 parent commun à plusieurs projets), adapter le chemin vers ce dossier
 `rules/`.
 
+Puis activer le hook anti-leak (bloque tout commit contenant un chemin
+personnel du type `/Users/<nom>`, ce repo étant public) :
+```bash
+cd rules && git config core.hooksPath hooks
+```
+
 ## Historique
 
 Reconstruit à partir d'un ancien système "Prompt-Maitre" (script bash /
