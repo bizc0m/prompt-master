@@ -41,7 +41,7 @@ avec leur résumé.
    testée dans le tour de conversation où elle est livrée (cas nominal + cas
    limite + intégration avec l'existant). Si le test est impossible
    (dépendance externe non vérifiable), le dire explicitement plutôt que
-   présumer le succès.
+   présumer le succès, et marquer le livrable `[NON TESTÉ]`.
 
 2. Tester avant de répondre, pas après — utiliser les outils disponibles
    (exécution, browser headless, build) systématiquement, sans attendre que
@@ -49,8 +49,14 @@ avec leur résumé.
 
 3. Périmètre strict : ne toucher que ce qui est explicitement demandé.
    Lister l'impact avant modification. Si une dépendance technique réelle
-   oblige à toucher autre chose, le signaler avant de le faire. Aucun
-   refactor, renommage, ou "amélioration" non sollicitée.
+   oblige à toucher autre chose, le signaler avant de le faire. Sans
+   demande explicite, ne jamais : modifier, déplacer, renommer, supprimer,
+   reformater, réorganiser, refactoriser, optimiser, nettoyer, compléter,
+   corriger hors scope, changer architecture, API, UX/UI, dépendance,
+   comportement, convention, structure ou nommage. Initiative hors scope
+   autorisée uniquement si les 4 conditions sont réunies : commit préalable,
+   rollback possible en 1 commit, aucune régression, scope inchangé sinon.
+   Sinon : proposer (≤3 suggestions) et attendre validation (WAIT ACK).
 
 4. Optimiser uniquement dans le périmètre touché (code mort, dépendances
    inutiles, complexité évitable) — jamais au-delà de ce périmètre. Le code
@@ -78,3 +84,13 @@ avec leur résumé.
    chaque changement d'architecture. Pour tout projet site/dashboard :
    `index.html` toujours à jour avec le code livré, et documenté
    (commentaires + section usage en tête de fichier ou dans `UX.md`).
+
+## CONTRAINTES D'ENVIRONNEMENT — à annoncer au démarrage d'une tâche
+Avant de produire, si l'environnement d'exécution a une limite réelle qui
+empêche de livrer ou de tester ce qui est demandé (accès réseau, outil
+absent, plateforme non disponible, etc.) : le dire au premier échange, pas
+après coup. Toute demande touchant une limite connue → STOP + limite
+énoncée + seuls chemins réellement possibles proposés. Jamais de
+contournement silencieux non signalé. (Vérifier la limite réelle avant de
+l'annoncer — ne pas supposer une limite par défaut si l'outil est en fait
+disponible, cf. règle qualité #2.)

@@ -12,9 +12,18 @@ Pipeline obligatoire (à chaque tâche)
 7. Vérifie
 8. Livre
 Avant création de tout nouveau projet
-* Proposer le type (App / Site / Dashboard / Root) et le chemin sous `/Users/JOB/#DEV`.
-* Attendre validation explicite avant de créer quoi que ce soit.
+* Proposer le chemin :
+  - `/Users/JOB/#DEV/01-projets/_applications` → App
+  - `/Users/JOB/#DEV/01-projets/_dashboards` → Dashboard
+  - `/Users/JOB/#DEV/01-projets` → Root
+  - `/Users/JOB/#DEV/01-projets/_Quizz` → Quizz
+  - sinon proposer un chemin sous `/Users/JOB/#DEV`.
+* Proposer le nom du dossier. Attendre validation explicite avant de créer quoi que ce soit.
 * Une fois créé : titre de la fenêtre/onglet terminal = nom du projet (en plus du nom de fichier log, voir rules/tooling.md § TERMINAL).
+Méthode
+* Poser les questions d'ambiguïté (format exact, plateforme, dépendances) avant de produire.
+* Maquette/squelette → validation → build complet. Ne pas sauter à l'implémentation complète sans validation de la maquette si la tâche est non triviale.
+* Vérifiable → livré vérifié (test réel). Sinon → marqué `[NON TESTÉ]`.
 Accès
 * Au tout début : demande tous les dossiers/permissions nécessaires en une seule fois, de manière définitive.
 * Lance la vérification d'accès immédiatement : environnement DEV, outils (versions), git/remote, droits d'écriture sur les dossiers du projet, bundle/binaire présent.
@@ -45,7 +54,12 @@ Rapport
 Après chaque cycle de travail, produire un rapport :
 * ce qui fonctionne
 * note (/10) pour chaque fonction testée
+Git
+* Avant toute modification : vérifier branche, status, fichiers déjà modifiés.
+* 1 tâche = 1 commit, commits atomiques, diff minimum, rollback simple.
 Livraison
+* Format par défaut : HTML single-file autonome, sauf demande contraire
+  explicite (la demande explicite prime toujours).
 * Git push obligatoire à la fin.
 * Après chaque rendu : toujours deux liens, cliquables/actionnables direct :
   1. le résultat lui-même (app lancée, page ouverte, fichier ouvert)
