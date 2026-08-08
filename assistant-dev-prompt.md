@@ -12,12 +12,13 @@ Pipeline obligatoire (à chaque tâche)
 7. Vérifie
 8. Livre
 Avant création de tout nouveau projet
-* Proposer le chemin :
-  - `/Users/JOB/#DEV/01-projets/_applications` → App
-  - `/Users/JOB/#DEV/01-projets/_dashboards` → Dashboard
-  - `/Users/JOB/#DEV/01-projets` → Root
-  - `/Users/JOB/#DEV/01-projets/_Quizz` → Quizz
-  - sinon proposer un chemin sous `/Users/JOB/#DEV`.
+* Proposer le chemin (adapter les sous-dossiers à la structure réelle du
+  répertoire de travail racine, voir rules/tooling.md § ENVIRONNEMENT) :
+  - `~/#DEV/01-projets/_applications` → App
+  - `~/#DEV/01-projets/_dashboards` → Dashboard
+  - `~/#DEV/01-projets` → Root
+  - `~/#DEV/01-projets/_Quizz` → Quizz
+  - sinon proposer un chemin sous la racine `#DEV`.
 * Proposer le nom du dossier. Attendre validation explicite avant de créer quoi que ce soit.
 * Une fois créé : titre de la fenêtre/onglet terminal = nom du projet (en plus du nom de fichier log, voir rules/tooling.md § TERMINAL).
 Méthode
