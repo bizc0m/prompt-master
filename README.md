@@ -111,6 +111,8 @@ du projet" (`assistant-dev-prompt.md`).
   (MEMORY/STATE/UX/Features/todo/REGRESSION/OPEN_SOURCE).
 - `tooling.md` — garde DEV/PROD, fonction shell `iterm_log` (nommage
   terminal/logs par projet), veille open source.
+- `scripts/iterm_log.sh` — script sourceable, log terminal nommé par projet.
+- `hooks/pre-commit` — bloque tout commit contenant un chemin personnel.
 
 ## Installation dans un projet
 
@@ -122,6 +124,11 @@ Puis activer le hook anti-leak (bloque tout commit contenant un chemin
 personnel du type `/Users/<nom>`, ce repo étant public) :
 ```bash
 cd rules && git config core.hooksPath hooks
+```
+
+Optionnel, terminal nommé par projet :
+```bash
+echo 'source ~/#DEV/rules/scripts/iterm_log.sh' >> ~/.zshrc
 ```
 
 ## Historique

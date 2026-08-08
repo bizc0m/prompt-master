@@ -23,24 +23,11 @@ echo -ne "\033]0;${NOM_PROJET}\007"
 À lancer au démarrage du travail sur un projet.
 
 Convention nom de log iTerm2 : `<NomProjet>_<Date>_<LLM>.log` dans
-`~/Documents/iTerm2Logs`.
-Fonction shell installée dans `~/.zshrc` (basée sur `script`, util Unix
-standard — indépendant d'iTerm2/version ; l'approche AppleScript
-`set log filename to` a été testée et échoue sur iTerm2 3.6.11, propriété
-non exposée au scripting) :
-```bash
-iterm_log() {
-  local NOM="${1:-projet}"
-  local LLM="${2:-default}"
-  local DATE
-  DATE="$(date +%Y-%m-%d_%H-%M-%S)"
-  local LOG_DIR="$HOME/Documents/iTerm2Logs"
-  mkdir -p "$LOG_DIR"
-  local LOG_PATH="${LOG_DIR}/${NOM}_${DATE}_${LLM}.log"
-  echo "Log actif: ${LOG_PATH} (tape 'exit' pour arrêter le log)"
-  script -q "$LOG_PATH"
-}
-```
+`~/Documents/iTerm2Logs`. Fonction `iterm_log` : voir `scripts/iterm_log.sh`
+(basée sur `script`, util Unix standard — indépendant d'iTerm2/version ;
+l'approche AppleScript `set log filename to` a été testée et échoue sur
+iTerm2 3.6.11, propriété non exposée au scripting).
+Installation : `source ~/#DEV/rules/scripts/iterm_log.sh` dans `~/.zshrc`.
 Usage : `iterm_log NomProjet NomLLM` → ouvre un sous-shell loggé, `exit`
 pour arrêter et revenir au shell parent.
 
