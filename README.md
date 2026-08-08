@@ -1,6 +1,6 @@
 # prompt-master
 
-**v1.5**
+**v1.5** — dernière mise à jour : 2026-08-08 16:54 CEST
 
 Système de règles réutilisable pour assistant IA dev (Claude Code et
 équivalents). Pipeline, versioning, tests, gestion de queue/features,
@@ -130,6 +130,12 @@ Optionnel, terminal nommé par projet :
 ```bash
 echo 'source ~/#DEV/rules/scripts/iterm_log.sh' >> ~/.zshrc
 ```
+
+## Procédure de mise à jour de ce repo
+
+Toute modification validée de `rules/` (par moi ou un LLM appliquant ces
+règles) : commit → push → mettre à jour la ligne "dernière mise à jour"
+en tête de ce README (date + heure réelles, pas approximatives).
 
 ## Historique
 
