@@ -3,8 +3,8 @@
 project: prompt-master
 channel: Dev
 started_at: 2026-08-09 12:52 Europe/Paris
-prompt_count: 4
-last_action: integration references projet base 26 code 3 lettres
+prompt_count: 5
+last_action: ajout numerotation stable des regles
 status: en cours
 
 ## Seuils
@@ -23,3 +23,5 @@ git_push_cadence: push automatique au 5e commit valide
 git_cadence_pattern: AAAAB (A=commit local, B=push)
 
 reference_scheme: PREFIX-CODE3 base26 AAA-ZZZ
+
+rule_numbering: [DOM-NNN]

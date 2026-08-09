@@ -96,3 +96,11 @@ Les références projet utilisent un code 3 lettres : `AAA` -> `AAB` -> `AAZ` ->
 - Exemple : `NCT-AAA`, `NCT-AAB`.
 - Indexer dans `REF.MD` ou équivalent.
 - Une référence attribuée reste stable.
+
+
+## NUMÉROTATION DES RÈGLES
+
+- Toute règle durable ajoutée au Prompt Master reçoit un identifiant `[DOM-NNN]`.
+- Exemple : `[GIT-001]`, `[COUNT-001]`, `[REF-001]`.
+- Ne pas réutiliser un identifiant ; déprécier si besoin.
+- Les objets/projets gardent la référence `PREFIX-CODE3`, séparée des règles.

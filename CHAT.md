@@ -17,3 +17,7 @@
 ## 2026-08-09 13:08 Europe/Paris
 - Demande utilisateur : intégrer proprement pour tous les projets le comptage de références en 3 lettres base 26.
 - Action : ajout de la règle `RÉFÉRENCES PROJET BASE 26` dans le Prompt Master et les règles de test/suivi.
+
+## 2026-08-09 13:12 Europe/Paris
+- Demande utilisateur : numéroter toujours chaque règle.
+- Action : ajout du standard `[DOM-NNN]` pour les règles, séparé des références projet `PREFIX-CODE3`.

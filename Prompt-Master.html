@@ -290,6 +290,18 @@ SCAN OUTILS / GITHUB / KM :
 - Si l&#x27;outil est utilisé dans un projet, ajouter aussi la référence dans `OPEN_SOURCE.md` ou le fichier sources existant du projet.
 
 
+
+NUMÉROTATION DES RÈGLES :
+- Chaque règle ajoutée au Prompt Master doit recevoir un identifiant stable.
+- Format recommandé : `[DOM-NNN]`, exemple `[GIT-001]`, `[DOC-004]`, `[REF-002]`, `[COUNT-001]`.
+- Le domaine doit être court, en majuscules : `CORE`, `DEV`, `GIT`, `DOC`, `KM`, `REF`, `UX`, `TEST`, `COUNT`, `AGENT`, `SEC`.
+- Le numéro est incrémental dans son domaine, sur 3 chiffres.
+- Ne jamais réutiliser un identifiant supprimé ou remplacé ; marquer `deprecated` si nécessaire.
+- Une règle modifiée garde son identifiant si son intention reste la même.
+- Une règle nouvelle reçoit un nouvel identifiant.
+- Les modules opérationnels peuvent aussi avoir un identifiant : `[MOD-001] #DEVSTART`, `[MOD-002] #COUNT`.
+- Les références projet restent séparées : `PREFIX-CODE3` pour les objets/projets, `[DOM-NNN]` pour les règles.
+
 RÉFÉRENCES PROJET BASE 26 :
 - Toute application, outil, dashboard, framework, skill, agent, module ou brique importante peut recevoir une référence courte stable.
 - Format recommandé : `&lt;PREFIX&gt;-&lt;CODE3&gt;`, exemple `NCT-AAA`, `NCT-AAB`, `DOC-AAA`.
