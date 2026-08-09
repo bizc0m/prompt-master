@@ -24,10 +24,10 @@ Ne jamais déclarer PASS sans preuve réelle. Si un test est impossible
 Compter les échanges dans une session de travail active sur un même
 projet (tâche dev, pas simple question — voir CLAUDE.md racine).
 
-- **15** : audit léger — poids du projet, libs redondantes/inutiles,
+- [COUNT-001] **15** : audit léger — poids du projet, libs redondantes/inutiles,
   purge code/sources morts.
-- **18** : prévenir que le seuil de dérive approche.
-- **21** : résumé de reprise (≤100 lignes : objectif, état, décisions,
+- [COUNT-002] **18** : prévenir que le seuil de dérive approche.
+- [COUNT-003] **21** : résumé de reprise (≤100 lignes : objectif, état, décisions,
   fichiers modifiés, commits, TODO restant, blocages, prochaine étape),
   puis suggérer nouveau chat.
 
@@ -39,11 +39,11 @@ non lié au projet, boucle de correction détectée.
 
 Le compteur est à la charge de l'assistant.
 
-- Au début d'une tâche DEV : créer ou mettre à jour `SESSION.md`.
-- À chaque réponse DEV : incrémenter `prompt_count`.
-- Si l'écriture est impossible : afficher `[COUNT NON PERSISTÉ]`.
-- À 15 / 18 / 21 / 25 / 30 : appliquer les seuils définis ci-dessus.
-- À la fin d'un cycle DEV : reporter compteur, tests, état Git et prochaine action dans `CHAT.md` ou `RESTORE.md` si ces fichiers existent.
+- [COUNT-004] Au début d'une tâche DEV : créer ou mettre à jour `SESSION.md`.
+- [COUNT-005] À chaque réponse DEV : incrémenter `prompt_count`.
+- [COUNT-006] Si l'écriture est impossible : afficher `[COUNT NON PERSISTÉ]`.
+- [COUNT-007] À 15 / 18 / 21 / 25 / 30 : appliquer les seuils définis ci-dessus.
+- [COUNT-008] À la fin d'un cycle DEV : reporter compteur, tests, état Git et prochaine action dans `CHAT.md` ou `RESTORE.md` si ces fichiers existent.
 
 ## FOOTER (fusionné, seulement si tâche dev active)
 ```
@@ -72,35 +72,35 @@ Si une valeur est inconnue ou non applicable : `—` ou `indisponible`.
 
 ## CADENCE GIT
 
-- Commit local après changement validé et vérifié.
-- Push automatique au 5e commit Git validé sur le projet.
-- Commits 1 à 4 : rester local et afficher `GIT : COMMIT LOCAL`.
-- Commit 5 : pousser vers le remote si aucun secret, conflit, réseau bloqué ou risque Stable.
-- Si le push échoue : garder les commits locaux, noter le blocage dans `SESSION.md` / `CHAT.md`.
+- [GIT-001] Commit local après changement validé et vérifié.
+- [GIT-002] Push automatique au 5e commit Git validé sur le projet.
+- [GIT-003] Commits 1 à 4 : rester local et afficher `GIT : COMMIT LOCAL`.
+- [GIT-004] Commit 5 : pousser vers le remote si aucun secret, conflit, réseau bloqué ou risque Stable.
+- [GIT-005] Si le push échoue : garder les commits locaux, noter le blocage dans `SESSION.md` / `CHAT.md`.
 
 CADENCE GIT AAAAB :
-- `A` = commit local validé, sans push.
-- `B` = push vers le remote.
-- Cycle : `A A A A B`, puis recommencer.
-- Ne pas interpréter comme `A A B A` ni comme push à chaque commit.
-- Au 5e événement Git validé du cycle : pousser les commits locaux accumulés.
-- Après `B`, remettre le compteur Git du cycle à 0.
-- Bloquer `B` seulement si secret détecté, conflit, réseau impossible, branche Stable sensible ou demande utilisateur contraire.
+- [GIT-006] `A` = commit local validé, sans push.
+- [GIT-007] `B` = push vers le remote.
+- [GIT-008] Cycle : `A A A A B`, puis recommencer.
+- [GIT-009] Ne pas interpréter comme `A A B A` ni comme push à chaque commit.
+- [GIT-010] Au 5e événement Git validé du cycle : pousser les commits locaux accumulés.
+- [GIT-011] Après `B`, remettre le compteur Git du cycle à 0.
+- [GIT-012] Bloquer `B` seulement si secret détecté, conflit, réseau impossible, branche Stable sensible ou demande utilisateur contraire.
 
 
 ## RÉFÉRENCES BASE 26
 
 Les références projet utilisent un code 3 lettres : `AAA` -> `AAB` -> `AAZ` -> `ABA`.
 
-- Format recommandé : `PREFIX-CODE3`.
-- Exemple : `NCT-AAA`, `NCT-AAB`.
-- Indexer dans `REF.MD` ou équivalent.
-- Une référence attribuée reste stable.
+- [REF-001] Format recommandé : `PREFIX-CODE3`.
+- [REF-002] Exemple : `NCT-AAA`, `NCT-AAB`.
+- [REF-003] Indexer dans `REF.MD` ou équivalent.
+- [REF-004] Une référence attribuée reste stable.
 
 
 ## NUMÉROTATION DES RÈGLES
 
-- Toute règle durable ajoutée au Prompt Master reçoit un identifiant `[DOM-NNN]`.
-- Exemple : `[GIT-001]`, `[COUNT-001]`, `[REF-001]`.
-- Ne pas réutiliser un identifiant ; déprécier si besoin.
-- Les objets/projets gardent la référence `PREFIX-CODE3`, séparée des règles.
+- [RULE-001] Toute règle durable ajoutée au Prompt Master reçoit un identifiant `[DOM-NNN]`.
+- [RULE-002] Exemple : `[GIT-001]`, `[COUNT-001]`, `[REF-001]`.
+- [RULE-003] Ne pas réutiliser un identifiant ; déprécier si besoin.
+- [RULE-004] Les objets/projets gardent la référence `PREFIX-CODE3`, séparée des règles.

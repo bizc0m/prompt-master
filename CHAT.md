@@ -21,3 +21,11 @@
 ## 2026-08-09 13:12 Europe/Paris
 - Demande utilisateur : numéroter toujours chaque règle.
 - Action : ajout du standard `[DOM-NNN]` pour les règles, séparé des références projet `PREFIX-CODE3`.
+
+## 2026-08-09 13:18 Europe/Paris
+- Correction utilisateur : la règle de numérotation était déclarée mais les consignes existantes n étaient pas numérotées.
+- Action : ajout automatique d identifiants `[DOM-NNN]` aux consignes en liste dans le prompt canonique, le prompt systématique et testing.md.
+
+## 2026-08-09 13:22 Europe/Paris
+- Vérification : aucune puce non numérotée restante dans les fichiers principaux.
+- Correction : retrait de deux formulations anciennes imposant une confirmation avant tout push, remplacées par cadence AAAAB.

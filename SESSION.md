@@ -3,8 +3,8 @@
 project: prompt-master
 channel: Dev
 started_at: 2026-08-09 12:52 Europe/Paris
-prompt_count: 5
-last_action: ajout numerotation stable des regles
+prompt_count: 7
+last_action: numerotation effective et correction contradictions push
 status: en cours
 
 ## Seuils
