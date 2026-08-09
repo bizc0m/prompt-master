@@ -42,3 +42,7 @@
 - Correction utilisateur : retirer `ÉTAT` du format de réponse.
 - Correction utilisateur : le compteur n était pas incrémenté à chaque prompt DEV.
 - Action : `SESSION.md` rattrapé à `prompt_count: 12`; format par défaut = ACTION / RÉSULTAT / NEXT.
+
+## 2026-08-09 13:45 Europe/Paris
+- Correction utilisateur : enlever le `je` et les informations inutiles.
+- Action : ajout règle `[STYLE-020]` ultra-concis sans `je`, justification ni méta-commentaire.
