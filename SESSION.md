@@ -3,8 +3,8 @@
 project: prompt-master
 channel: Dev
 started_at: 2026-08-09 12:52 Europe/Paris
-prompt_count: 13
-last_action: suppression je meta-commentaire format ultra-concis
+prompt_count: 14
+last_action: format ultra-court ACT RES NEXT
 status: en cours
 
 ## Seuils
@@ -26,4 +26,4 @@ reference_scheme: PREFIX-CODE3 base26 AAA-ZZZ
 
 rule_numbering: [DOM-NNN]
 
-response_format: ACTION / RESULTAT / NEXT, bullet points, sans ETAT
+response_format: ACT / RES / NEXT, bullet points, sans je, sans ETAT

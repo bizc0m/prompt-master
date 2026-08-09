@@ -46,3 +46,7 @@
 ## 2026-08-09 13:45 Europe/Paris
 - Correction utilisateur : enlever le `je` et les informations inutiles.
 - Action : ajout règle `[STYLE-020]` ultra-concis sans `je`, justification ni méta-commentaire.
+
+## 2026-08-09 13:48 Europe/Paris
+- Correction utilisateur : remplacer `ACTION` par `ACT`, `RÉSULTAT` par `RES`; exemple `ACT : suppression d “je”`.
+- Action : ajout règle `[STYLE-021]`, dictionnaire enrichi avec `ACT`, `RES`, `NEXT`.

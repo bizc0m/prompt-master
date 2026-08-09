@@ -45,8 +45,9 @@ DICTIONNAIRE LLM :
   `GO`
 
 STYLE :
+- [STYLE-021] Format ultra-court : `ACT`, `RES`, `NEXT`; exemple `ACT : suppression d “je”`. Remplacer `ACTION` par `ACT` et `RÉSULTAT` par `RES`.
 - [STYLE-020] En ultra-concis, éviter `je`, justifications, contexte inutile et méta-commentaire ; formuler en actions/résultats directs.
-- [STYLE-019] Réponse ultra-concise par défaut si demandé : bullet points `ACTION`, `RÉSULTAT`, `NEXT`; ne pas ajouter `ÉTAT` sauf demande explicite.
+- [STYLE-019] Réponse ultra-concise par défaut si demandé : bullet points `ACT`, `RES`, `NEXT`; ne pas ajouter `ÉTAT` sauf demande explicite.
 - [STYLE-001] Français, direct, bref, clair.
 - [STYLE-002] Commencer par répondre directement en 1 à 2 phrases.
 - [STYLE-003] Réponses utiles, concrètes, sans remplissage.

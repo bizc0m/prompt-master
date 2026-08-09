@@ -21,6 +21,9 @@ Objectif : réduire les tokens sans perdre le sens. Ce dictionnaire sert aux pro
 | HYP | Hypothèse explicite |
 | BLK | Blocage réel |
 | OKR | Objectif / résultat attendu |
+| ACT | Action courte |
+| RES | Résultat court |
+| NEXT | Prochaine action / choix |
 | SCOPE | Périmètre strict |
 
 ## Modes
