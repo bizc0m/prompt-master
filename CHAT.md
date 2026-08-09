@@ -50,3 +50,8 @@
 ## 2026-08-09 13:48 Europe/Paris
 - Correction utilisateur : remplacer `ACTION` par `ACT`, `RÉSULTAT` par `RES`; exemple `ACT : suppression d “je”`.
 - Action : ajout règle `[STYLE-021]`, dictionnaire enrichi avec `ACT`, `RES`, `NEXT`.
+
+## 2026-08-09 13:53 Europe/Paris
+- Correction utilisateur : liens Git doivent être cliquables.
+- Correction utilisateur : `res ...` devient `RES : GIT - PUSH`.
+- Action : ajout règles `[STYLE-022]` et `[DELIV-001]`, dictionnaire enrichi.

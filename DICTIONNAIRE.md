@@ -23,6 +23,7 @@ Objectif : réduire les tokens sans perdre le sens. Ce dictionnaire sert aux pro
 | OKR | Objectif / résultat attendu |
 | ACT | Action courte |
 | RES | Résultat court |
+| RES:GIT | Résultat Git court : `RES : GIT - PUSH` |
 | NEXT | Prochaine action / choix |
 | SCOPE | Périmètre strict |
 
@@ -207,4 +208,16 @@ Ultra-concis :
 
 ```text
 HYP? stop + 1Q.
+```
+
+## Formats de réponse
+
+```text
+ACT : <action courte>
+RES : GIT - PUSH | COMMIT | AHEAD N | CLEAN
+NEXT : <1-3 choix>
+```
+
+```text
+LIEN : [assistant-dev-prompt.md](https://github.com/bizc0m/prompt-master/blob/main/assistant-dev-prompt.md)
 ```
