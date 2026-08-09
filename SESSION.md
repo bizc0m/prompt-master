@@ -3,8 +3,8 @@
 project: prompt-master
 channel: Dev
 started_at: 2026-08-09 12:52 Europe/Paris
-prompt_count: 15
-last_action: liens cliquables et format RES GIT PUSH
+prompt_count: 23
+last_action: format direct Reste sans ACT RES pour liste simple
 status: en cours
 
 ## Seuils

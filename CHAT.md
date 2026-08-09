@@ -55,3 +55,7 @@
 - Correction utilisateur : liens Git doivent être cliquables.
 - Correction utilisateur : `res ...` devient `RES : GIT - PUSH`.
 - Action : ajout règles `[STYLE-022]` et `[DELIV-001]`, dictionnaire enrichi.
+
+## 2026-08-09 14:00 Europe/Paris
+- Correction utilisateur : pour liste simple, répondre `Reste :` directement, sans `ACT : réponse` ni `RES :`.
+- Action : ajout règle `[STYLE-023]`.
