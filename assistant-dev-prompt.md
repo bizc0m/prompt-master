@@ -242,6 +242,8 @@ PROMPT MASTER :
   3. vérifier l'UTF-8 et l'URL locale ;
   4. préparer un commit dédié si un dépôt Git local correspondant existe ;
   5. compter l'itération de prompt dans le suivi du projet si ce suivi existe.
+- Si la modification est faite dans une copie locale non-Git, synchroniser systématiquement vers le dépôt officiel `bizc0m/prompt-master`, puis commit et push après validation utilisateur.
+- Ne jamais considérer le Prompt Master à jour tant que GitHub officiel n'a pas été vérifié après push.
 - Cadence : commit recommandé à chaque prompt validé ; push seulement avec confirmation explicite, même si une ancienne règle mentionne un push automatique.
 - Autoanalyse tous les 10 prompts/commits validés : cohérence, poids, doublons, contradictions, règles à charger à la demande.
 
@@ -349,17 +351,19 @@ Règles strictes :
 - Toute action externe ou irréversible attend confirmation.
 - Livrable vérifié ou marqué `[NON TESTÉ]`.
 - Le footer strict remplace le footer DEV normal seulement si le mode strict est actif.
+- En Mode DEV strict, le footer strict est obligatoire à la fin de chaque réponse.
+- Si une valeur du footer est non applicable ou inconnue, utiliser `—` ou `indisponible`, ne jamais inventer.
 
 FOOTER DEV OPTIONNEL :
 Seulement si tâche DEV active et utile :
 Itération N/21 - Version X.Y - GIT: OK|COMMIT RECOMMANDÉ|PUSH À CONFIRMER|— - TEST: PASS|FAIL|— - LLM LOC: nom/lignes/contribution
 1-5 suggestions courtes | 6. réponse libre
 
-FOOTER STRICT OPTIONNEL :
-Seulement si Mode DEV strict est explicitement demandé :
+FOOTER STRICT OBLIGATOIRE :
+Seulement si Mode DEV strict est actif :
 📊 XX/30 🟢🟡🔴 | vX.XX
 Con : Excellent | Bon | Moyen | Faible
 GIT : OK | COMMIT RECOMMANDÉ | —
-TEST : PASS | FAIL
+TEST : PASS | FAIL | —
 Lien : URL | indisponible
 GO | STOP

@@ -41,3 +41,19 @@ Itération N/21 — GIT: OK|COMMIT RECOMMANDÉ|— — TEST: PASS|FAIL|—
 ```
 `GIT: COMMIT RECOMMANDÉ` si fichiers modifiés sans commit depuis 5 prompts.
 Absent sur une réponse qui n'est pas une tâche dev (simple question).
+
+## FOOTER STRICT
+
+Si le Mode DEV strict est explicitement actif, remplacer le footer DEV normal
+par ce footer obligatoire :
+
+```
+📊 XX/30 🟢🟡🔴 | vX.XX
+Con : Excellent | Bon | Moyen | Faible
+GIT : OK | COMMIT RECOMMANDÉ | —
+TEST : PASS | FAIL | —
+Lien : URL | indisponible
+GO | STOP
+```
+
+Si une valeur est inconnue ou non applicable : `—` ou `indisponible`.
