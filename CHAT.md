@@ -33,3 +33,7 @@
 ## 2026-08-09 13:30 Europe/Paris
 - Demande utilisateur : créer un `.md` dictionnaire pour résumer les concepts et réduire les tokens.
 - Action : création de `DICTIONNAIRE.md`, ajout règle `[DICT-001]`, mise à jour README, prompt canonique et prompt systématique.
+
+## 2026-08-09 13:36 Europe/Paris
+- Demande utilisateur : réduire le texte au mot/verbe, ultra concis.
+- Action : ajout section `Ultra-concis`, verbes courts, opérateurs et exemples dans `DICTIONNAIRE.md`; ajout règle `[DICT-002]`.

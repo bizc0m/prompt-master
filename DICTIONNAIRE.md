@@ -130,3 +130,78 @@ Version compacte :
 ```text
 #DEVSTART + GST + SESSION → DOC + TST → A ; B seulement si AAAAB.
 ```
+
+
+## Ultra-concis
+
+Objectif : réduire une consigne à mots / verbes / opérateurs, sans perdre l'action.
+
+- [DICT-006] Utiliser l'ultra-concis seulement entre agents/LLM qui connaissent ce dictionnaire.
+- [DICT-007] Structure : `VERBE OBJET -> PREUVE -> ÉTAT`.
+- [DICT-008] Garder les chemins, sources, erreurs, commandes et noms exacts non compressés.
+- [DICT-009] Remplacer les phrases longues par verbes d'action : `verif`, `lis`, `maj`, `sync`, `test`, `commit`, `push`, `doc`, `log`, `stop`.
+- [DICT-010] Si risque ou ambiguïté : sortir du mode ultra-concis et écrire clairement.
+
+## Verbes courts
+
+| Code | Sens |
+|---|---|
+| verif | vérifier |
+| lis | lire |
+| scan | rechercher / inspecter |
+| maj | mettre à jour |
+| sync | synchroniser |
+| doc | documenter |
+| log | journaliser |
+| test | tester |
+| fix | corriger |
+| build | construire / compiler |
+| run | lancer |
+| diff | vérifier les changements |
+| commit | créer commit local |
+| push | pousser remote |
+| stop | arrêter et demander |
+| keep | conserver |
+| skip | ignorer volontairement |
+| link | fournir lien |
+| cite | citer source |
+
+## Syntaxe ultra-concise
+
+| Forme | Sens |
+|---|---|
+| `A -> B` | faire A puis B |
+| `A + B` | faire A et B |
+| `A ? B : C` | si A alors B sinon C |
+| `!A` | ne pas faire A |
+| `A*` | obligatoire |
+| `A~` | optionnel |
+| `A@PATH` | action A sur chemin PATH |
+| `A#REF` | action A sur référence REF |
+| `A[preuve]` | action avec preuve attendue |
+
+## Exemples ultra-concis
+
+Long :
+
+```text
+Vérifie l'état Git, lis le fichier de session, mets à jour la documentation, teste réellement, commit local, puis pousse seulement si le cycle AAAAB arrive au B.
+```
+
+Ultra-concis :
+
+```text
+verif GST + lis SESSION -> maj DOC -> test[preuve] -> commit A ; push si AAAAB=B.
+```
+
+Long :
+
+```text
+Si l'information est incertaine, arrête-toi et pose une seule question ciblée.
+```
+
+Ultra-concis :
+
+```text
+HYP? stop + 1Q.
+```
