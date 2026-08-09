@@ -1,6 +1,6 @@
 # prompt-master
 
-**v2.0-dev** — dernière mise à jour : 2026-08-09 11:58 CEST
+**v2.1-dev** — dernière mise à jour : 2026-08-09 13:30 CEST
 
 Source officielle du Prompt Master réutilisable pour LLM Desktop, CLI et Web.
 
@@ -17,6 +17,7 @@ La version HTML locale/autonome est :
 La version compacte basée sur dictionnaire est :
 
 - [`prompt-master-compact-dictionnaire_v0.1.txt`](prompt-master-compact-dictionnaire_v0.1.txt)
+- [`DICTIONNAIRE.md`](DICTIONNAIRE.md)
 
 ## Quick start
 
@@ -38,6 +39,7 @@ du projet" (`assistant-dev-prompt.md`).
 
 ## Fichiers
 
+- `DICTIONNAIRE.md` — glossaire commun pour prompts compacts, modules, handoffs et réduction de tokens.
 - `versioning.md` — versioning fichier (+0.2/échange, +1.0/refonte majeure),
   header obligatoire, règles qualité (scope strict, test avant annonce).
 - `assistant-dev-prompt.md` — protocole complet : rôle, pipeline (Avis→

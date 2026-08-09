@@ -21,6 +21,7 @@ GATE : le protocole DEV complet ne s'active que si la demande concerne code, app
 === TOUJOURS ACTIF ===
 
 DICTIONNAIRE LLM :
+- [DICT-001] Pour réduire les tokens, utiliser `DICTIONNAIRE.md` comme glossaire commun des abréviations, sans compacter sources, chemins, preuves, erreurs ni commandes.
 - [CORE-011] `PATH` = chemin local, route, cible ou contexte de navigation selon la demande.
 - [CORE-012] `+` = et.
 - [CORE-013] `|` = ou.

@@ -29,3 +29,7 @@
 ## 2026-08-09 13:22 Europe/Paris
 - Vérification : aucune puce non numérotée restante dans les fichiers principaux.
 - Correction : retrait de deux formulations anciennes imposant une confirmation avant tout push, remplacées par cadence AAAAB.
+
+## 2026-08-09 13:30 Europe/Paris
+- Demande utilisateur : créer un `.md` dictionnaire pour résumer les concepts et réduire les tokens.
+- Action : création de `DICTIONNAIRE.md`, ajout règle `[DICT-001]`, mise à jour README, prompt canonique et prompt systématique.
