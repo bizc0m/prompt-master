@@ -9,3 +9,7 @@
 ## 2026-08-09 12:56 Europe/Paris
 - Correction utilisateur : la règle attendue est push tous les 5 commits Git, pas confirmation à chaque push.
 - Action : règles Git/PROMPT MASTER/DOCG/testing mises à jour localement.
+
+## 2026-08-09 13:00 Europe/Paris
+- Correction utilisateur : expliciter la cadence `AAAAB`, pas une interprétation ambiguë type `AABA`.
+- Action : ajout de la définition `A=commit local`, `B=push`, cycle `A A A A B`.

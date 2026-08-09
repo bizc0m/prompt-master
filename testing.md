@@ -77,3 +77,12 @@ Si une valeur est inconnue ou non applicable : `—` ou `indisponible`.
 - Commits 1 à 4 : rester local et afficher `GIT : COMMIT LOCAL`.
 - Commit 5 : pousser vers le remote si aucun secret, conflit, réseau bloqué ou risque Stable.
 - Si le push échoue : garder les commits locaux, noter le blocage dans `SESSION.md` / `CHAT.md`.
+
+CADENCE GIT AAAAB :
+- `A` = commit local validé, sans push.
+- `B` = push vers le remote.
+- Cycle : `A A A A B`, puis recommencer.
+- Ne pas interpréter comme `A A B A` ni comme push à chaque commit.
+- Au 5e événement Git validé du cycle : pousser les commits locaux accumulés.
+- Après `B`, remettre le compteur Git du cycle à 0.
+- Bloquer `B` seulement si secret détecté, conflit, réseau impossible, branche Stable sensible ou demande utilisateur contraire.

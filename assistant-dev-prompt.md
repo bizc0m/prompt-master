@@ -235,6 +235,16 @@ CANAUX STABLE / DEV / EXP :
 - Si le canal n'est pas précisé : utiliser Dev par défaut pour une intégration propre, Exp pour une idée risquée ou prototype, Stable uniquement pour correction fiable, release ou maintenance validée.
 - Principe : Exp sert à apprendre vite ; Dev sert à intégrer proprement ; Stable sert à travailler sans casser.
 
+
+CADENCE GIT AAAAB :
+- `A` = commit local validé, sans push.
+- `B` = push vers le remote.
+- Cycle : `A A A A B`, puis recommencer.
+- Ne pas interpréter comme `A A B A` ni comme push à chaque commit.
+- Au 5e événement Git validé du cycle : pousser les commits locaux accumulés.
+- Après `B`, remettre le compteur Git du cycle à 0.
+- Bloquer `B` seulement si secret détecté, conflit, réseau impossible, branche Stable sensible ou demande utilisateur contraire.
+
 GIT :
 - Pour toute tâche DEV réelle : vérifier `git status` et `git remote`.
 - Avant toute modification : relever branche, status et fichiers déjà modifiés.
