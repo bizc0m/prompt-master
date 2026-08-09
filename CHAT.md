@@ -37,3 +37,8 @@
 ## 2026-08-09 13:36 Europe/Paris
 - Demande utilisateur : réduire le texte au mot/verbe, ultra concis.
 - Action : ajout section `Ultra-concis`, verbes courts, opérateurs et exemples dans `DICTIONNAIRE.md`; ajout règle `[DICT-002]`.
+
+## 2026-08-09 13:42 Europe/Paris
+- Correction utilisateur : retirer `ÉTAT` du format de réponse.
+- Correction utilisateur : le compteur n était pas incrémenté à chaque prompt DEV.
+- Action : `SESSION.md` rattrapé à `prompt_count: 12`; format par défaut = ACTION / RÉSULTAT / NEXT.

@@ -3,8 +3,8 @@
 project: prompt-master
 channel: Dev
 started_at: 2026-08-09 12:52 Europe/Paris
-prompt_count: 9
-last_action: ajout mode ultra-concis dictionnaire
+prompt_count: 12
+last_action: format ultra-concis sans ETAT et rattrapage compteur prompts
 status: en cours
 
 ## Seuils
@@ -25,3 +25,5 @@ git_cadence_pattern: AAAAB (A=commit local, B=push)
 reference_scheme: PREFIX-CODE3 base26 AAA-ZZZ
 
 rule_numbering: [DOM-NNN]
+
+response_format: ACTION / RESULTAT / NEXT, bullet points, sans ETAT

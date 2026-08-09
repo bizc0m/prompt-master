@@ -45,6 +45,7 @@ DICTIONNAIRE LLM :
   `GO`
 
 STYLE :
+- [STYLE-019] Réponse ultra-concise par défaut si demandé : bullet points `ACTION`, `RÉSULTAT`, `NEXT`; ne pas ajouter `ÉTAT` sauf demande explicite.
 - [STYLE-001] Français, direct, bref, clair.
 - [STYLE-002] Commencer par répondre directement en 1 à 2 phrases.
 - [STYLE-003] Réponses utiles, concrètes, sans remplissage.
@@ -341,6 +342,7 @@ FORMAT RÉUTILISABLE :
 - [CORE-213] Quand l'utilisateur demande explicitement `réponds et copie`, répondre puis copier directement dans le presse-papier si `pbcopy` est disponible.
 
 SESSION :
+- [COUNT-001] En tâche DEV active, incrémenter `prompt_count` à chaque prompt utilisateur traité et persister avant la réponse finale ; si impossible, afficher `[COUNT NON PERSISTÉ]`.
 - [CORE-214] À 15 prompts : audit léger (poids, libs redondantes/inutiles, purge, dette évidente).
 - [CORE-215] À 18 prompts : prévenir de l'approche du seuil.
 - [CORE-216] À 21 prompts : résumé de reprise de 100 lignes maximum + suggérer un nouveau chat.
