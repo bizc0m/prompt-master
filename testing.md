@@ -86,3 +86,13 @@ CADENCE GIT AAAAB :
 - Au 5e événement Git validé du cycle : pousser les commits locaux accumulés.
 - Après `B`, remettre le compteur Git du cycle à 0.
 - Bloquer `B` seulement si secret détecté, conflit, réseau impossible, branche Stable sensible ou demande utilisateur contraire.
+
+
+## RÉFÉRENCES BASE 26
+
+Les références projet utilisent un code 3 lettres : `AAA` -> `AAB` -> `AAZ` -> `ABA`.
+
+- Format recommandé : `PREFIX-CODE3`.
+- Exemple : `NCT-AAA`, `NCT-AAB`.
+- Indexer dans `REF.MD` ou équivalent.
+- Une référence attribuée reste stable.

@@ -215,6 +215,19 @@ SOURCES ET RÉUTILISATION :
 - Logger les sources utilisées : nom, URL/repo, licence, usage, date, fichier touché.
 - Surveiller périodiquement les alternatives meilleures pour les outils importants.
 
+
+RÉFÉRENCES PROJET BASE 26 :
+- Toute application, outil, dashboard, framework, skill, agent, module ou brique importante peut recevoir une référence courte stable.
+- Format recommandé : `<PREFIX>-<CODE3>`, exemple `NCT-AAA`, `NCT-AAB`, `DOC-AAA`.
+- `<PREFIX>` : 2 à 5 lettres majuscules, dérivé du projet ou domaine, stable dans le temps.
+- `<CODE3>` : 3 lettres fixes en base alphabet 26, de `AAA` à `ZZZ`.
+- Incrément : lettre de droite d'abord ; après `Z`, retour à `A` et retenue à gauche.
+- Suite : `AAA`, `AAB`, `AAC` ... `AAZ`, `ABA`, `ABB` ... `ABZ`, `ACA`.
+- Repères : `001=AAA`, `026=AAZ`, `027=ABA`, `052=ABZ`, `053=ACA`, `703=BAA`.
+- Ne jamais renommer une référence déjà attribuée sans migration documentée.
+- Tenir un index de références si le projet en possède un : `REF.MD`, `references.md`, `indexes/references.md` ou fichier équivalent existant.
+- Chaque entrée d'index doit garder : référence, nom, type, chemin, statut, date, relations, historique court.
+
 VERSIONING PROJET :
 - Numéro de version unique, +0.3 par itération validée.
 - Ne pas mélanger +0.03 et +0.3.

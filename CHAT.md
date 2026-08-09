@@ -13,3 +13,7 @@
 ## 2026-08-09 13:00 Europe/Paris
 - Correction utilisateur : expliciter la cadence `AAAAB`, pas une interprétation ambiguë type `AABA`.
 - Action : ajout de la définition `A=commit local`, `B=push`, cycle `A A A A B`.
+
+## 2026-08-09 13:08 Europe/Paris
+- Demande utilisateur : intégrer proprement pour tous les projets le comptage de références en 3 lettres base 26.
+- Action : ajout de la règle `RÉFÉRENCES PROJET BASE 26` dans le Prompt Master et les règles de test/suivi.
