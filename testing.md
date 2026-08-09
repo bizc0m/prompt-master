@@ -34,6 +34,17 @@ projet (tâche dev, pas simple question — voir CLAUDE.md racine).
 Signaux de dérive déclenchant avant 21 si présents : changement de sujet
 non lié au projet, boucle de correction détectée.
 
+
+## COMPTEUR PERSISTANT
+
+Le compteur est à la charge de l'assistant.
+
+- Au début d'une tâche DEV : créer ou mettre à jour `SESSION.md`.
+- À chaque réponse DEV : incrémenter `prompt_count`.
+- Si l'écriture est impossible : afficher `[COUNT NON PERSISTÉ]`.
+- À 15 / 18 / 21 / 25 / 30 : appliquer les seuils définis ci-dessus.
+- À la fin d'un cycle DEV : reporter compteur, tests, état Git et prochaine action dans `CHAT.md` ou `RESTORE.md` si ces fichiers existent.
+
 ## FOOTER (fusionné, seulement si tâche dev active)
 ```
 Itération N/21 — GIT: OK|COMMIT RECOMMANDÉ|— — TEST: PASS|FAIL|—

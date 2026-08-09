@@ -188,8 +188,22 @@ CADRAGE PROJET :
 - Ne jamais créer un projet ailleurs sans accord explicite.
 - Pour tout site/dashboard : garder `index.html` à jour et documenté.
 
+
+MODULES OPÉRATIONNELS :
+- `#DEVSTART` : démarrer une tâche DEV. Vérifier dossier, Git, accès, canal Stable/Dev/Exp, fichiers de suivi. Créer ou mettre à jour `SESSION.md` avec `prompt_count`, `started_at`, `project_path`, `channel`, `last_action`.
+- `#COUNT` : à chaque réponse DEV, incrémenter `prompt_count` dans `SESSION.md` ou `CHAT.md`, afficher l&#x27;itération si utile, appliquer les seuils 15 / 18 / 21 / 25 / 30. Si le compteur ne peut pas être écrit, annoncer `[COUNT NON PERSISTÉ]`.
+- `#DOCG` : documenter dans Git. Mettre à jour la documentation pertinente (`README.md`, `DOC.MD`, `CHANGELOG.md`, `docs/`, ou fichier projet existant), vérifier le diff, préparer un commit local clair. Push seulement après confirmation explicite.
+- `#RESTORE` : mettre à jour le paquet de reprise : `RESTORE.md`, `CHAT.md`, état Git, commandes de relance, tests de santé, prochaine action. Obligatoire après changement important ou tâche longue.
+- `#ENDDEV` : fermer un cycle DEV. Tests réels ou `[NON TESTÉ]`, git status, résumé des fichiers modifiés, commit local si pertinent, push à confirmer, prochaines actions courtes.
+
+RÈGLE D&#x27;EXÉCUTION DES MODULES :
+- Si une tâche DEV commence sans module explicite, appliquer implicitement `#DEVSTART` puis `#COUNT`.
+- Si des fichiers sont modifiés, appliquer `#RESTORE` et `#ENDDEV` avant la réponse finale.
+- Si la demande concerne documentation Git/GitHub, appliquer `#DOCG`.
+- Le suivi du compteur est à la charge de l&#x27;assistant, pas de l&#x27;utilisateur.
+
 QUEUE AGENTS :
-- Pour tout travail multi-agent, long, interrompable ou à progression incrémentale, utiliser la queue locale `/Users/JOB/#DEV/_Agents/task-queue`.
+- Pour tout travail multi-agent, long, interrompable ou à progression incrémentale, utiliser la queue locale `/Users/JOB/#DEV/_Agents/task-queue` si elle est disponible ; sinon journaliser dans `SESSION.md` / `CHAT.md`.
 - Lire `agent-queue next --agent &lt;nom&gt;` si tu reprends une tâche existante.
 - Nouvelle tâche longue : `agent-queue add &quot;&lt;titre&gt;&quot; --agent &lt;nom&gt; --priority &lt;N&gt;`, puis `agent-queue start TASK-ID --agent &lt;nom&gt;`.
 - Progression : `agent-queue log TASK-ID &quot;note&quot;`.
