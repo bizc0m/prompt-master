@@ -158,7 +158,7 @@ CADRAGE PROJET :
 MODULES OPÉRATIONNELS :
 - `#DEVSTART` : démarrer une tâche DEV. Vérifier dossier, Git, accès, canal Stable/Dev/Exp, fichiers de suivi. Créer ou mettre à jour `SESSION.md` avec `prompt_count`, `started_at`, `project_path`, `channel`, `last_action`.
 - `#COUNT` : à chaque réponse DEV, incrémenter `prompt_count` dans `SESSION.md` ou `CHAT.md`, afficher l'itération si utile, appliquer les seuils 15 / 18 / 21 / 25 / 30. Si le compteur ne peut pas être écrit, annoncer `[COUNT NON PERSISTÉ]`.
-- `#DOCG` : documenter dans Git. Mettre à jour la documentation pertinente (`README.md`, `DOC.MD`, `CHANGELOG.md`, `docs/`, ou fichier projet existant), vérifier le diff, préparer un commit local clair. Push seulement après confirmation explicite.
+- `#DOCG` : documenter dans Git. Mettre à jour la documentation pertinente (`README.md`, `DOC.MD`, `CHANGELOG.md`, `docs/`, ou fichier projet existant), vérifier le diff, préparer un commit local clair. Push automatique au 5e commit validé, sauf blocage réseau, conflit ou risque explicite.
 - `#RESTORE` : mettre à jour le paquet de reprise : `RESTORE.md`, `CHAT.md`, état Git, commandes de relance, tests de santé, prochaine action. Obligatoire après changement important ou tâche longue.
 - `#ENDDEV` : fermer un cycle DEV. Tests réels ou `[NON TESTÉ]`, git status, résumé des fichiers modifiés, commit local si pertinent, push à confirmer, prochaines actions courtes.
 
@@ -268,7 +268,7 @@ CANAUX STABLE / DEV / EXP :
 - Flux recommandé : `Exp -> Dev -> Stable`.
 - Git recommandé : `main` ou `stable` = Stable ; `dev` = Dev ; `exp/<nom>` = Exp.
 - Ne jamais merger vers Stable sans validation explicite.
-- Ne jamais pousser sans accord explicite de l'utilisateur, même si une règle projet mentionne un push automatique.
+- Ne jamais pousser Stable sans validation explicite. En Dev/Exp, pousser automatiquement au 5e commit validé, sauf risque explicite.
 - Versioning recommandé : `vX.Y.Z-exp`, `vX.Y.Z-dev`, `vX.Y.Z-stable` ou `vX.Y.Z`. Si le projet possède déjà une convention, la respecter en ajoutant clairement le canal.
 - Promotion `Exp -> Dev` autorisée seulement si utilité claire, périmètre compris, limites connues, code jetable retiré ou isolé, dépendances identifiées, et aucun élément instable ne contamine Stable.
 - Promotion `Dev -> Stable` autorisée seulement si build OK, tests OK, régressions critiques OK, documentation utile à jour, changelog/release note à jour si existant, usage réel vérifié si applicable, rollback possible ou état Git propre.
@@ -280,8 +280,8 @@ GIT :
 - Avant toute modification : relever branche, status et fichiers déjà modifiés.
 - Si un dépôt Git existe et que les tests passent : préparer un commit clair sur les fichiers modifiés dans le périmètre demandé.
 - 1 tâche = 1 commit atomique, diff minimum, rollback simple.
-- Ne jamais pousser sans accord utilisateur écrit dans le chat.
-- Si une règle projet dit `git push obligatoire`, la lire comme `push à préparer puis confirmation explicite obligatoire avant exécution`.
+- Push automatique tous les 5 commits Git validés par tâche/projet, sauf blocage réseau, conflit, secret détecté ou zone sensible.
+- Si une règle projet dit `git push obligatoire`, la lire comme `push au prochain palier de 5 commits`, sauf demande explicite de push immédiat.
 - Tous les 5 prompts DEV avec fichiers modifiés sans commit : afficher `GIT : COMMIT RECOMMANDÉ`.
 - Si aucun remote n'existe, signaler : `remote GitHub absent`.
 - Si aucun dépôt Git local n'existe, signaler : `dépôt Git local absent`.
@@ -298,7 +298,7 @@ PROMPT MASTER :
   5. compter l'itération de prompt dans le suivi du projet si ce suivi existe.
 - Si la modification est faite dans une copie locale non-Git, synchroniser systématiquement vers le dépôt officiel `bizc0m/prompt-master`, puis commit et push après validation utilisateur.
 - Ne jamais considérer le Prompt Master à jour tant que GitHub officiel n'a pas été vérifié après push.
-- Cadence : commit recommandé à chaque prompt validé ; push seulement avec confirmation explicite, même si une ancienne règle mentionne un push automatique.
+- Cadence : commit recommandé à chaque prompt validé ; push automatique à chaque palier de 5 commits Git validés. Commits 1 à 4 restent locaux ; commit 5 déclenche push. Si push impossible, signaler et garder l'état récupérable.
 - Autoanalyse tous les 10 prompts/commits validés : cohérence, poids, doublons, contradictions, règles à charger à la demande.
 
 TEST :

@@ -68,3 +68,12 @@ GO | STOP
 ```
 
 Si une valeur est inconnue ou non applicable : `—` ou `indisponible`.
+
+
+## CADENCE GIT
+
+- Commit local après changement validé et vérifié.
+- Push automatique au 5e commit Git validé sur le projet.
+- Commits 1 à 4 : rester local et afficher `GIT : COMMIT LOCAL`.
+- Commit 5 : pousser vers le remote si aucun secret, conflit, réseau bloqué ou risque Stable.
+- Si le push échoue : garder les commits locaux, noter le blocage dans `SESSION.md` / `CHAT.md`.

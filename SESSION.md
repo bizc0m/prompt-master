@@ -3,8 +3,8 @@
 project: prompt-master
 channel: Dev
 started_at: 2026-08-09 12:52 Europe/Paris
-prompt_count: 1
-last_action: ajout modules operationnels #DEVSTART #COUNT #DOCG #RESTORE #ENDDEV
+prompt_count: 2
+last_action: correction cadence push automatique tous les 5 commits git
 status: en cours
 
 ## Seuils
@@ -17,3 +17,5 @@ status: en cours
 ## Notes
 - Compteur initialise apres correction utilisateur.
 - Les prompts precedents de cette conversation ne sont pas recomptes retroactivement faute de compteur persistant fiable.
+
+git_push_cadence: push automatique au 5e commit valide
