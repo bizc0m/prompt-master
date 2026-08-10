@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CTxKNL - Prompt Master</title>
+  <meta name="description" content="CTxKNL, Context Kernel modulaire pour charger le Prompt Master selon le besoin.">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #111827;
+      --muted: #5b6472;
+      --line: #d9dee7;
+      --paper: #f7f8fb;
+      --panel: #ffffff;
+      --accent: #0f7a3b;
+      --accent-strong: #08612c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.5;
+    }
+    main {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 44px 0;
+    }
+    header {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 24px;
+      margin-bottom: 24px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(2rem, 6vw, 4rem);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 720px;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    a.button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--ink);
+      background: var(--panel);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    a.primary {
+      color: #ffffff;
+      border-color: var(--accent);
+      background: var(--accent);
+    }
+    a.primary:hover { background: var(--accent-strong); }
+    section {
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    h2 {
+      margin: 0 0 12px;
+      font-size: 1.25rem;
+    }
+    pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      margin: 0;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      font-size: .94rem;
+    }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    li { margin: 7px 0; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>CTxKNL</h1>
+      <p class="subtitle">Context Kernel modulaire pour charger le Prompt Master : base minimale par défaut, modules spécialisés uniquement quand ils sont utiles.</p>
+      <nav class="actions" aria-label="Liens principaux">
+        <a class="button primary" href="CTxKNL_v0.1.md">Ouvrir CTxKNL</a>
+        <a class="button" href="CTxKNL-launcher-prompt.txt">Prompt à copier</a>
+        <a class="button" href="assistant-dev-prompt.md">Source officielle</a>
+        <a class="button" href="https://github.com/bizc0m/prompt-master">GitHub</a>
+      </nav>
+    </header>
+
+    <section>
+      <h2>Prompt à lancer</h2>
+      <pre><code>Charge CTxKNL avant de répondre.
+
+Source prioritaire :
+https://api.github.com/repos/bizc0m/prompt-master/contents/CTxKNL_v0.1.md?ref=main
+
+Fallback raw :
+https://raw.githubusercontent.com/bizc0m/prompt-master/main/CTxKNL_v0.1.md</code></pre>
+    </section>
+
+    <section>
+      <h2>Fichiers</h2>
+      <ul>
+        <li><a href="CTxKNL_v0.1.md">CTxKNL_v0.1.md</a> : architecture modulaire.</li>
+        <li><a href="CTxKNL-launcher-prompt.txt">CTxKNL-launcher-prompt.txt</a> : prompt court à coller dans n'importe quel LLM.</li>
+        <li><a href="assistant-dev-prompt.md">assistant-dev-prompt.md</a> : source officielle complète.</li>
+        <li><a href="README.md">README.md</a> : documentation du dépôt.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
