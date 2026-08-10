@@ -1,5 +1,28 @@
 # prompt-master
 
+## Toujours charger la dernière version
+
+Prompt de démarrage à donner à un agent avant tout travail DEV :
+
+```text
+Tu dois toujours utiliser la dernière version officielle du Prompt Master avant de répondre ou d'agir.
+
+Source officielle à charger en priorité :
+https://raw.githubusercontent.com/bizc0m/prompt-master/main/assistant-dev-prompt.md
+
+Procédure obligatoire :
+1. Lire cette URL au début de toute tâche dev, projet, automatisation, GitHub, app, site, dashboard, skill ou agent.
+2. Appliquer uniquement les sections utiles au périmètre de la demande.
+3. Ne pas charger toute la doctrine si la demande est simple ou hors DEV.
+4. Si l'URL est indisponible, utiliser la copie locale si elle existe :
+   /Users/JOB/#DEV/01-projets/Tools/ai-station-m5/prompt-master-systematique.txt
+5. Si la copie locale et GitHub divergent, GitHub est la source officielle, sauf consigne utilisateur explicite.
+6. Pour toute mise à jour du Prompt Master : modifier la source, régénérer les vues locales, vérifier UTF-8/URL, puis préparer commit/push selon la règle Git active.
+7. Ne jamais prétendre utiliser la dernière version sans l'avoir vérifiée ou chargée dans le tour.
+```
+
+Fichier dédié : [`prompt-master-latest-loader.txt`](prompt-master-latest-loader.txt)
+
 **v2.2-dev** — dernière mise à jour : 2026-08-09 13:36 CEST
 
 Source officielle du Prompt Master réutilisable pour LLM Desktop, CLI et Web.
