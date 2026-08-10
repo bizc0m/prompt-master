@@ -52,7 +52,8 @@
       gap: 10px;
       margin-top: 24px;
     }
-    a.button {
+    a.button,
+    button.button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -64,13 +65,22 @@
       background: var(--panel);
       text-decoration: none;
       font-weight: 700;
+      cursor: pointer;
+      font: inherit;
     }
+    button.button:disabled { cursor: default; }
     a.primary {
       color: #ffffff;
       border-color: var(--accent);
       background: var(--accent);
     }
+    button.primary {
+      color: #ffffff;
+      border-color: var(--accent);
+      background: var(--accent);
+    }
     a.primary:hover { background: var(--accent-strong); }
+    button.primary:hover { background: var(--accent-strong); }
     section {
       padding: 22px 0;
       border-bottom: 1px solid var(--line);
@@ -78,6 +88,21 @@
     h2 {
       margin: 0 0 12px;
       font-size: 1.25rem;
+    }
+    .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .section-head h2 { margin: 0; }
+    .copy-status {
+      min-height: 20px;
+      margin: 8px 0 0;
+      color: var(--accent-strong);
+      font-size: .92rem;
+      font-weight: 700;
     }
     pre {
       white-space: pre-wrap;
@@ -111,14 +136,18 @@
     </header>
 
     <section>
-      <h2>Prompt à lancer</h2>
-      <pre><code>Charge CTxKNL avant de répondre.
+      <div class="section-head">
+        <h2>Prompt à lancer</h2>
+        <button class="button primary" type="button" id="copyPrompt">Copier</button>
+      </div>
+      <pre><code id="launcherPrompt">Charge CTxKNL avant de répondre.
 
 Source prioritaire :
 https://api.github.com/repos/bizc0m/prompt-master/contents/CTxKNL_v0.1.md?ref=main
 
 Fallback raw :
 https://raw.githubusercontent.com/bizc0m/prompt-master/main/CTxKNL_v0.1.md</code></pre>
+      <p class="copy-status" id="copyStatus" aria-live="polite"></p>
     </section>
 
     <section>
@@ -131,5 +160,30 @@ https://raw.githubusercontent.com/bizc0m/prompt-master/main/CTxKNL_v0.1.md</code
       </ul>
     </section>
   </main>
+  <script>
+    const copyButton = document.getElementById('copyPrompt');
+    const copyStatus = document.getElementById('copyStatus');
+    const launcherPrompt = document.getElementById('launcherPrompt');
+
+    copyButton.addEventListener('click', async () => {
+      const text = launcherPrompt.textContent.trim();
+      try {
+        await navigator.clipboard.writeText(text);
+        copyStatus.textContent = 'Prompt copié.';
+        copyButton.textContent = 'Copié';
+        setTimeout(() => {
+          copyButton.textContent = 'Copier';
+          copyStatus.textContent = '';
+        }, 1800);
+      } catch {
+        const range = document.createRange();
+        range.selectNodeContents(launcherPrompt);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        copyStatus.textContent = 'Copie automatique bloquée : texte sélectionné.';
+      }
+    });
+  </script>
 </body>
 </html>
