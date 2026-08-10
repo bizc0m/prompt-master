@@ -33,6 +33,10 @@ Source officielle du Prompt Master réutilisable pour LLM Desktop, CLI et Web.
 
 ## Version canonique
 
+Architecture modulaire Context Kernel :
+
+- [`CTxKNL_v0.1.md`](CTxKNL_v0.1.md) - Base minimale + modules activables selon le besoin.
+
 Le prompt complet à copier dans un LLM est :
 
 - [`prompt-master-systematique.txt`](prompt-master-systematique.txt)
