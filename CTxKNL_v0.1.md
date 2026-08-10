@@ -8,6 +8,14 @@ SHA-256 source : 7e1cc8d83407aeeaf9297f49c9b24207ea10d73b40df42dee35fc6093c47065
 Statut : version modulaire publiée.
 Encodage : UTF-8.
 
+## Liens GitHub
+
+- Dépôt : <https://github.com/bizc0m/prompt-master>
+- CTxKNL : <https://github.com/bizc0m/prompt-master/blob/main/CTxKNL_v0.1.md>
+- Source officielle : <https://github.com/bizc0m/prompt-master/blob/main/assistant-dev-prompt.md>
+- Version brute CTxKNL : <https://raw.githubusercontent.com/bizc0m/prompt-master/main/CTxKNL_v0.1.md>
+- Version brute officielle : <https://raw.githubusercontent.com/bizc0m/prompt-master/main/assistant-dev-prompt.md>
+
 ## Règle d'activation
 
 - Charger `Prompt Base minimal` par défaut.
