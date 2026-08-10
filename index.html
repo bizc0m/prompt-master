@@ -142,11 +142,24 @@
       </div>
       <pre><code id="launcherPrompt">Charge CTxKNL avant de répondre.
 
-Source prioritaire :
-https://api.github.com/repos/bizc0m/prompt-master/contents/CTxKNL_v0.1.md?ref=main
+Source prioritaire simple :
+https://bizc0m.github.io/prompt-master/CTxKNL_v0.1.md
 
 Fallback raw :
-https://raw.githubusercontent.com/bizc0m/prompt-master/main/CTxKNL_v0.1.md</code></pre>
+https://raw.githubusercontent.com/bizc0m/prompt-master/main/CTxKNL_v0.1.md
+
+Fallback API GitHub :
+https://api.github.com/repos/bizc0m/prompt-master/contents/CTxKNL_v0.1.md?ref=main
+
+Procédure :
+1. Charger la Base minimale.
+2. Charger uniquement les modules utiles à ma demande.
+3. Ne pas charger les modules lourds si la demande est simple.
+4. Indiquer les modules chargés et la source utilisée.
+5. Si l&#x27;API GitHub est utilisée, décoder le champ JSON `content` en base64.
+6. Si aucune URL n&#x27;est accessible depuis ton environnement, le dire clairement et me demander de coller le contenu de CTxKNL ou du prompt launcher.
+7. Après le setup de base, appliquer mon prompt personnalisé si je le fournis sous forme de texte, fichier local ou URL.
+8. Si une règle locale/custom contredit CTxKNL, signaler la divergence avant d&#x27;agir.</code></pre>
       <p class="copy-status" id="copyStatus" aria-live="polite"></p>
     </section>
 
