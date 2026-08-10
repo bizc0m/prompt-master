@@ -23,24 +23,18 @@ Copier-coller ce bloc dans n'importe quel LLM :
 ```text
 Charge CTxKNL avant de répondre.
 
-Source prioritaire :
+Source :
 https://bizc0m.github.io/prompt-master/CTxKNL_v0.1.md
 
-Fallback raw :
+Si cette URL ne marche pas, utilise :
 https://raw.githubusercontent.com/bizc0m/prompt-master/main/CTxKNL_v0.1.md
-
-Fallback API GitHub :
-https://api.github.com/repos/bizc0m/prompt-master/contents/CTxKNL_v0.1.md?ref=main
 
 Procédure :
 1. Charger la Base minimale.
 2. Charger uniquement les modules utiles à ma demande.
 3. Ne pas charger les modules lourds si la demande est simple.
 4. Indiquer les modules chargés et la source utilisée.
-5. Si l'API GitHub est utilisée, décoder le champ JSON `content` en base64.
-6. Si aucune URL n'est accessible depuis ton environnement, le dire clairement et me demander de coller le contenu de CTxKNL ou du prompt launcher.
-7. Après le setup de base, appliquer mon prompt personnalisé si je le fournis sous forme de texte, fichier local ou URL.
-8. Si une règle locale/custom contredit CTxKNL, signaler la divergence avant d'agir.
+5. Si aucune URL n'est accessible depuis ton environnement, demande-moi de coller le contenu.
 ```
 
 ## Prompt personnalisé
