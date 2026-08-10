@@ -16,6 +16,37 @@ Encodage : UTF-8.
 - Version brute CTxKNL : <https://raw.githubusercontent.com/bizc0m/prompt-master/main/CTxKNL_v0.1.md>
 - Version brute officielle : <https://raw.githubusercontent.com/bizc0m/prompt-master/main/assistant-dev-prompt.md>
 
+## Prompt de lancement universel
+
+Copier-coller ce bloc dans n'importe quel LLM :
+
+```text
+Charge CTxKNL avant de répondre.
+
+Source prioritaire :
+https://api.github.com/repos/bizc0m/prompt-master/contents/CTxKNL_v0.1.md?ref=main
+
+Fallback raw :
+https://raw.githubusercontent.com/bizc0m/prompt-master/main/CTxKNL_v0.1.md
+
+Procédure :
+1. Charger la Base minimale.
+2. Charger uniquement les modules utiles à ma demande.
+3. Ne pas charger les modules lourds si la demande est simple.
+4. Indiquer les modules chargés et la source utilisée.
+5. Si GitHub est indisponible, demander ou utiliser ma copie locale si je la fournis.
+6. Après le setup de base, appliquer mon prompt personnalisé si je le fournis sous forme de texte, fichier local ou URL.
+7. Si une règle locale/custom contredit CTxKNL, signaler la divergence avant d'agir.
+```
+
+## Prompt personnalisé
+
+- Le prompt personnalisé se charge après la Base CTxKNL.
+- Il peut être fourni comme texte collé, fichier local ou URL.
+- Il doit rester séparé de CTxKNL pour éviter de casser la source officielle.
+- Recommandation locale : `prompt-custo.local.md`, non publié par défaut.
+- Si le prompt personnalisé doit devenir officiel, demander validation puis proposer une intégration dans GitHub.
+
 ## Règle d'activation
 
 - Charger `Prompt Base minimal` par défaut.
