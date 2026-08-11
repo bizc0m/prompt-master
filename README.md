@@ -16,7 +16,7 @@ Station IA locale pour macOS Apple Silicon M5.
 - `V2/` : version propre courante
 - `V2/CTxKNL_v0.1.md` : Prompt Master modulaire Context Kernel
 - `CTxKNL-launcher-prompt.txt` : prompt court à coller dans n'importe quel LLM
-- `index.html` : page publique avec bouton copier et générateur de modules
+- `index.html` : page publique avec bouton copier, générateur de modules et bookmarks/services
 - `archive/2026-08-10-ctxknl-v2/` : anciens brouillons et backups de la refonte
 - `AI-Station-design-prompt.md` : brief design et historique versions
 - `BDSM-18-consensuel-prompt-pack.md` : pack prompts image adulte consensuel
