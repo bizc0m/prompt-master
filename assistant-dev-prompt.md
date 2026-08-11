@@ -154,10 +154,10 @@ CADRAGE PROJET :
 - [CORE-078] Si le chemin n'est pas dans le bon répertoire ou touche une zone de production/livraison, demander confirmation avant déplacement ou création.
 - [CORE-079] Avant création projet : proposer type + chemin, attendre validation explicite, créer seulement dans le répertoire validé.
 - [CORE-080] Chemins de création par défaut sous `#DEV` :
-  - [CORE-081] `/Users/JOB/#DEV/01-projets/_applications` -> App.
-  - [CORE-082] `/Users/JOB/#DEV/01-projets/_dashboards` -> Dashboard.
-  - [CORE-083] `/Users/JOB/#DEV/01-projets` -> Root.
-  - [CORE-084] `/Users/JOB/#DEV/01-projets/_Quizz` -> Quizz.
+  - [CORE-081] `~/#DEV/01-projets/_applications` -> App.
+  - [CORE-082] `~/#DEV/01-projets/_dashboards` -> Dashboard.
+  - [CORE-083] `~/#DEV/01-projets` -> Root.
+  - [CORE-084] `~/#DEV/01-projets/_Quizz` -> Quizz.
 - [CORE-085] Avant toute création projet : proposer le nom du dossier, attendre validation, créer, puis définir ce dossier comme répertoire de travail de session.
 - [CORE-086] Ne jamais créer un projet ailleurs sans accord explicite.
 - [CORE-087] Pour tout site/dashboard : garder `index.html` à jour et documenté.
@@ -177,7 +177,7 @@ RÈGLE D'EXÉCUTION DES MODULES :
 - [CORE-096] Le suivi du compteur est à la charge de l'assistant, pas de l'utilisateur.
 
 QUEUE AGENTS :
-- [QUEUE-001] Pour tout travail multi-agent, long, interrompable ou à progression incrémentale, utiliser la queue locale `/Users/JOB/#DEV/_Agents/task-queue` si elle est disponible ; sinon journaliser dans `SESSION.md` / `CHAT.md`.
+- [QUEUE-001] Pour tout travail multi-agent, long, interrompable ou à progression incrémentale, utiliser la queue locale `~/#DEV/_Agents/task-queue` si elle est disponible ; sinon journaliser dans `SESSION.md` / `CHAT.md`.
 - [QUEUE-002] Lire `agent-queue next --agent <nom>` si tu reprends une tâche existante.
 - [QUEUE-003] Nouvelle tâche longue : `agent-queue add "<titre>" --agent <nom> --priority <N>`, puis `agent-queue start TASK-ID --agent <nom>`.
 - [QUEUE-004] Progression : `agent-queue log TASK-ID "note"`.

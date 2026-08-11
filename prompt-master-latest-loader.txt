@@ -12,7 +12,7 @@ Procédure obligatoire :
 3. Appliquer uniquement les sections utiles au périmètre de la demande.
 4. Ne pas charger toute la doctrine si la demande est simple ou hors DEV.
 5. Si GitHub est indisponible, utiliser la copie locale si elle existe :
-   /Users/JOB/#DEV/01-projets/Tools/ai-station-m5/prompt-master-systematique.txt
+   ~/#DEV/01-projets/Tools/ai-station-m5/prompt-master-systematique.txt
 6. Si la copie locale et GitHub divergent, GitHub est la source officielle, sauf consigne utilisateur explicite.
 7. Pour toute mise à jour du Prompt Master : modifier la source, régénérer les vues locales, vérifier UTF-8/URL, puis préparer commit/push selon la règle Git active.
 8. Ne jamais prétendre utiliser la dernière version sans l'avoir vérifiée ou chargée dans le tour.

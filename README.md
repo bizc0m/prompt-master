@@ -21,7 +21,6 @@ Station IA locale pour macOS Apple Silicon M5.
 - Bookmarklet : `javascript:(()=>{window.open('https://bizc0m.github.io/prompt-master/','_blank','noopener');})();`
 - `archive/2026-08-10-ctxknl-v2/` : anciens brouillons et backups de la refonte
 - `AI-Station-design-prompt.md` : brief design et historique versions
-- `BDSM-18-consensuel-prompt-pack.md` : pack prompts image adulte consensuel
 - `sources/_bootstrap.html` : source design de reference
 
 ## Services locaux
@@ -52,25 +51,25 @@ Design actuel : `v4.2`
 
 Scripts :
 
-- `/Users/JOB/#DEV/01-projets/Tools/ai-station-m5/launchers/codex.command`
-- `/Users/JOB/#DEV/01-projets/Tools/ai-station-m5/launchers/claude.command`
-- `/Users/JOB/#DEV/01-projets/Tools/ai-station-m5/launchers/claude-caveman.command`
-- `/Users/JOB/#DEV/01-projets/Tools/ai-station-m5/launchers/aider.command`
-- `/Users/JOB/#DEV/01-projets/Tools/ai-station-m5/launchers/hermes.command`
-- `/Users/JOB/#DEV/01-projets/Tools/ai-station-m5/launchers/cursor.command`
-- `/Users/JOB/#DEV/01-projets/Tools/ai-station-m5/launchers/zcode.command`
-- `/Users/JOB/#DEV/01-projets/Tools/ai-station-m5/launchers/cline.command`
-- `/Users/JOB/#DEV/01-projets/Tools/ai-station-m5/launchers/goose.command`
-- `/Users/JOB/#DEV/01-projets/Tools/ai-station-m5/launchers/openhands.command`
-- `/Users/JOB/#DEV/01-projets/Tools/ai-station-m5/launchers/opencode.command`
-- `/Users/JOB/#DEV/01-projets/Tools/ai-station-m5/launchers/comfyui.command`
+- `~/#DEV/01-projets/Tools/ai-station-m5/launchers/codex.command`
+- `~/#DEV/01-projets/Tools/ai-station-m5/launchers/claude.command`
+- `~/#DEV/01-projets/Tools/ai-station-m5/launchers/claude-caveman.command`
+- `~/#DEV/01-projets/Tools/ai-station-m5/launchers/aider.command`
+- `~/#DEV/01-projets/Tools/ai-station-m5/launchers/hermes.command`
+- `~/#DEV/01-projets/Tools/ai-station-m5/launchers/cursor.command`
+- `~/#DEV/01-projets/Tools/ai-station-m5/launchers/zcode.command`
+- `~/#DEV/01-projets/Tools/ai-station-m5/launchers/cline.command`
+- `~/#DEV/01-projets/Tools/ai-station-m5/launchers/goose.command`
+- `~/#DEV/01-projets/Tools/ai-station-m5/launchers/openhands.command`
+- `~/#DEV/01-projets/Tools/ai-station-m5/launchers/opencode.command`
+- `~/#DEV/01-projets/Tools/ai-station-m5/launchers/comfyui.command`
 
 ## LLM local
 
-- Racine Ollama : `/Users/JOB/.ollama/models`
-- Manifests : `/Users/JOB/.ollama/models/manifests`
-- Blobs/poids : `/Users/JOB/.ollama/models/blobs`
-- Modele Hermes : `/Users/JOB/.ollama/models/manifests/registry.ollama.ai/library/qwen2.5-coder/14b`
+- Racine Ollama : `~/.ollama/models`
+- Manifests : `~/.ollama/models/manifests`
+- Blobs/poids : `~/.ollama/models/blobs`
+- Modele Hermes : `~/.ollama/models/manifests/registry.ollama.ai/library/qwen2.5-coder/14b`
 
 ## A completer
 

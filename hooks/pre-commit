@@ -4,7 +4,7 @@
 
 PATTERN="/Users/JOB"
 
-MATCHES=$(git diff --cached --name-only -z | grep -zv '^hooks/pre-commit$' | xargs -0 grep -l "$PATTERN" 2>/dev/null)
+MATCHES=$(git diff --cached --name-only -z | grep -zv -e '^hooks/pre-commit$' -e '^\.github/workflows/leak-check\.yml$' | xargs -0 grep -l "$PATTERN" 2>/dev/null)
 
 if [ -n "$MATCHES" ]; then
   echo "❌ COMMIT BLOQUÉ — chemin perso détecté ($PATTERN) dans :"
