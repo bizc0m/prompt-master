@@ -30,11 +30,19 @@ Si cette URL ne marche pas, utilise :
 https://raw.githubusercontent.com/bizc0m/prompt-master/main/CTxKNL_v0.1.md
 
 Procédure :
-1. Charger la Base minimale.
-2. Charger uniquement les modules utiles à ma demande.
-3. Ne pas charger les modules lourds si la demande est simple.
-4. Indiquer les modules chargés et la source utilisée.
-5. Si aucune URL n'est accessible depuis ton environnement, demande-moi de coller le contenu.
+1. Charge la Base minimale.
+2. Lis ma demande.
+3. Déduis le mode :
+   - Chat : question simple, explication, commande à fournir.
+   - Dev : code, bug, repo, Git, tests.
+   - App : app macOS, runtime, fenêtre, lancement.
+   - Dash : site, dashboard, page, UI web.
+4. Si je fais seulement Entrée ou si la demande est vide, passe en mode Chat.
+5. Propose les modules nécessaires selon la demande.
+6. Si le mode est Dev, App ou Dash et que le repo/chemin manque, demande-le avant d'agir.
+7. Ne charge pas de module inutile.
+8. Pour une demande simple, réponds directement sans commentaire sur les modules.
+9. Si aucune URL n'est accessible depuis ton environnement, demande-moi de coller le contenu.
 ```
 
 ## Prompt personnalisé
@@ -49,6 +57,9 @@ Procédure :
 
 - La page publique peut générer un prompt avec modules choisis manuellement.
 - La Base minimale reste toujours chargée en premier.
+- Le mode par défaut est `Chat` si la demande est vide, triviale ou si l'utilisateur fait seulement Entrée.
+- Les modes opérationnels sont `Dev`, `App` et `Dash`; ils se déduisent de la demande avant de charger les modules.
+- Pour `Dev`, `App` ou `Dash`, demander le repo/chemin si le périmètre local manque.
 - Les modules sélectionnés sont des modules demandés explicitement, pas une obligation de charger toute la doctrine.
 - Si la demande révèle qu'un module nécessaire manque, l'agent doit le signaler et proposer de l'ajouter avant d'agir.
 - Si aucun module n'est sélectionné, l'agent lit d'abord la demande puis déduit les modules nécessaires.
