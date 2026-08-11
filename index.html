@@ -275,11 +275,19 @@ Si cette URL ne marche pas, utilise :
 https://raw.githubusercontent.com/bizc0m/prompt-master/main/CTxKNL_v0.1.md
 
 Procédure :
-1. Charger la Base minimale.
-2. Charger uniquement les modules utiles à ma demande.
-3. Ne pas charger les modules lourds si la demande est simple.
-4. Indiquer les modules chargés et la source utilisée.
-5. Si aucune URL n&#x27;est accessible depuis ton environnement, demande-moi de coller le contenu.</code></pre>
+1. Charge la Base minimale.
+2. Lis ma demande.
+3. Déduis le mode :
+   - Chat : question simple, explication, commande à fournir.
+   - Dev : code, bug, repo, Git, tests.
+   - App : app macOS, runtime, fenêtre, lancement.
+   - Dash : site, dashboard, page, UI web.
+4. Si je fais seulement Entrée ou si la demande est vide, passe en mode Chat.
+5. Propose les modules nécessaires selon la demande.
+6. Si le mode est Dev, App ou Dash et que le repo/chemin manque, demande-le avant d&#x27;agir.
+7. Ne charge pas de module inutile.
+8. Pour une demande simple, réponds directement sans commentaire sur les modules.
+9. Si aucune URL n&#x27;est accessible depuis ton environnement, demande-moi de coller le contenu.</code></pre>
       <p class="copy-status" id="copyStatus" aria-live="polite"></p>
     </section>
 
@@ -342,11 +350,14 @@ https://raw.githubusercontent.com/bizc0m/prompt-master/main/CTxKNL_v0.1.md
 Procédure :
 1. Charge la Base minimale.
 2. Lis ma demande.
-3. Charge les modules sélectionnés ci-dessous.
-4. Si un module nécessaire manque, signale-le et propose de l'ajouter avant d'agir.
-5. N'utilise pas les modules non utiles.
-6. Indique les modules chargés.
-7. Agis.
+3. Déduis le mode : Chat, Dev, App ou Dash.
+4. Si la demande est vide ou si je fais seulement Entrée, passe en mode Chat.
+5. Propose les modules nécessaires selon la demande.
+6. Utilise les modules sélectionnés ci-dessous comme préférence, pas comme obligation aveugle.
+7. Si un module nécessaire manque, signale-le et propose de l'ajouter avant d'agir.
+8. Si le mode est Dev, App ou Dash et que le repo/chemin manque, demande-le avant d'agir.
+9. Pour une demande simple, réponds directement sans commentaire sur les modules.
+10. Agis.
 
 Modules sélectionnés :
 ${moduleText}
