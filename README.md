@@ -1,119 +1,75 @@
-# prompt-master
+# ai-station-m5
 
-## Toujours charger la dernière version
+Station IA locale pour macOS Apple Silicon M5.
 
-Prompt de démarrage à donner à un agent avant tout travail DEV :
+## Liens GitHub
 
-```text
-Tu dois toujours utiliser la dernière version officielle du Prompt Master avant de répondre ou d'agir.
+- Dépôt Prompt Master : <https://github.com/bizc0m/prompt-master>
+- CTxKNL : <https://github.com/bizc0m/prompt-master/blob/main/CTxKNL_v0.1.md>
+- Prompt à coller dans n'importe quel LLM : <https://github.com/bizc0m/prompt-master/blob/main/CTxKNL-launcher-prompt.txt>
+- Générateur de Prompt Master : <https://bizc0m.github.io/prompt-master/>
+- Source officielle : <https://github.com/bizc0m/prompt-master/blob/main/assistant-dev-prompt.md>
 
-Source officielle à charger en priorité :
-https://api.github.com/repos/bizc0m/prompt-master/contents/assistant-dev-prompt.md?ref=main
+## Contenu
 
-Fallback raw si l'API GitHub est indisponible :
-https://raw.githubusercontent.com/bizc0m/prompt-master/main/assistant-dev-prompt.md
+- `AI-Station.html` : page routeur locale
+- `V2/` : version propre courante
+- `V2/CTxKNL_v0.1.md` : Prompt Master modulaire Context Kernel
+- `CTxKNL-launcher-prompt.txt` : prompt court à coller dans n'importe quel LLM
+- `index.html` : page publique avec bouton copier et générateur de modules
+- `archive/2026-08-10-ctxknl-v2/` : anciens brouillons et backups de la refonte
+- `AI-Station-design-prompt.md` : brief design et historique versions
+- `BDSM-18-consensuel-prompt-pack.md` : pack prompts image adulte consensuel
+- `sources/_bootstrap.html` : source design de reference
 
-Procédure obligatoire :
-1. Lire cette URL au début de toute tâche dev, projet, automatisation, GitHub, app, site, dashboard, skill ou agent.
-2. Si la source API renvoie du JSON GitHub contents, décoder le champ `content` en base64.
-3. Appliquer uniquement les sections utiles au périmètre de la demande.
-4. Ne pas charger toute la doctrine si la demande est simple ou hors DEV.
-5. Si GitHub est indisponible, utiliser la copie locale si elle existe :
-   /Users/JOB/#DEV/01-projets/Tools/ai-station-m5/prompt-master-systematique.txt
-6. Si la copie locale et GitHub divergent, GitHub est la source officielle, sauf consigne utilisateur explicite.
-7. Pour toute mise à jour du Prompt Master : modifier la source, régénérer les vues locales, vérifier UTF-8/URL, puis préparer commit/push selon la règle Git active.
-8. Ne jamais prétendre utiliser la dernière version sans l'avoir vérifiée ou chargée dans le tour.
-```
+## Services locaux
 
-Fichier dédié : [`prompt-master-latest-loader.txt`](prompt-master-latest-loader.txt)
+- ComfyUI : `http://127.0.0.1:8188/`
+- Open WebUI : `http://localhost:3000/`
+- Ollama : `http://127.0.0.1:11434/api/tags`
 
-**v2.2-dev** — dernière mise à jour : 2026-08-09 13:36 CEST
+## Version
 
-Source officielle du Prompt Master réutilisable pour LLM Desktop, CLI et Web.
+Design actuel : `v4.2`
 
-## Version canonique
+## Agents dev detectes
 
-Architecture modulaire Context Kernel :
+- Codex CLI
+- Claude Code
+- Aider
+- Hermes
+- Cursor
+- ZCode
+- Cline
+- Goose
+- OpenHands
+- OpenCode
+- ComfyUI
 
-- [`CTxKNL_v0.1.md`](CTxKNL_v0.1.md) - Base minimale + modules activables selon le besoin.
+## Lanceurs iTerm
 
-Le prompt complet à copier dans un LLM est :
+Scripts :
 
-- [`prompt-master-systematique.txt`](prompt-master-systematique.txt)
+- `/Users/JOB/#DEV/01-projets/Tools/ai-station-m5/launchers/codex.command`
+- `/Users/JOB/#DEV/01-projets/Tools/ai-station-m5/launchers/claude.command`
+- `/Users/JOB/#DEV/01-projets/Tools/ai-station-m5/launchers/claude-caveman.command`
+- `/Users/JOB/#DEV/01-projets/Tools/ai-station-m5/launchers/aider.command`
+- `/Users/JOB/#DEV/01-projets/Tools/ai-station-m5/launchers/hermes.command`
+- `/Users/JOB/#DEV/01-projets/Tools/ai-station-m5/launchers/cursor.command`
+- `/Users/JOB/#DEV/01-projets/Tools/ai-station-m5/launchers/zcode.command`
+- `/Users/JOB/#DEV/01-projets/Tools/ai-station-m5/launchers/cline.command`
+- `/Users/JOB/#DEV/01-projets/Tools/ai-station-m5/launchers/goose.command`
+- `/Users/JOB/#DEV/01-projets/Tools/ai-station-m5/launchers/openhands.command`
+- `/Users/JOB/#DEV/01-projets/Tools/ai-station-m5/launchers/opencode.command`
+- `/Users/JOB/#DEV/01-projets/Tools/ai-station-m5/launchers/comfyui.command`
 
-La version HTML locale/autonome est :
+## LLM local
 
-- [`Prompt-Master.html`](Prompt-Master.html)
+- Racine Ollama : `/Users/JOB/.ollama/models`
+- Manifests : `/Users/JOB/.ollama/models/manifests`
+- Blobs/poids : `/Users/JOB/.ollama/models/blobs`
+- Modele Hermes : `/Users/JOB/.ollama/models/manifests/registry.ollama.ai/library/qwen2.5-coder/14b`
 
-La version compacte basée sur dictionnaire est :
+## A completer
 
-- [`prompt-master-compact-dictionnaire_v0.1.txt`](prompt-master-compact-dictionnaire_v0.1.txt)
-- [`DICTIONNAIRE.md`](DICTIONNAIRE.md)
-
-## Quick start
-
-Copier le contenu complet de `prompt-master-systematique.txt`.
-
-Pour un contexte court, utiliser `prompt-master-compact-dictionnaire_v0.1.txt`, puis charger les sections détaillées seulement quand elles deviennent utiles.
-
-**Non inclus, exclu volontairement** (spécifique macOS/Claude Code ou non
-opérationnel hors cet environnement — voir `tooling.md` /
-`assistant-dev-prompt.md` pour le détail complet) : `pbcopy`, `iterm_log`/
-titre terminal, audit croisé multi-LLM, `TOOLS.md`/`setup.md` sync
-devices, "continuer sans réponse après 5 min" (suppose un agent autonome,
-non applicable en chat classique).
-
-**Compressé, détail dans les fichiers sources** : commandes "reviens à
-vN" / "montre l'historique" (`versioning.md`), format exact d'une entrée
-`REGRESSION.md` (`queue.md`), "consigner validation accès dans CLAUDE.md
-du projet" (`assistant-dev-prompt.md`).
-
-## Fichiers
-
-- `DICTIONNAIRE.md` — glossaire commun pour prompts compacts, modules, handoffs, mode ultra-concis et réduction de tokens.
-- `versioning.md` — versioning fichier (+0.2/échange, +1.0/refonte majeure),
-  header obligatoire, règles qualité (scope strict, test avant annonce).
-- `assistant-dev-prompt.md` — protocole complet : rôle, pipeline (Avis→
-  Analyse→Critique→Améliore→Optimise→Compact→Vérifie→Livre), accès,
-  livraison (liens Finder + résultat), rapport, pbcopy.
-- `queue.md` — convention features `*`/`**`/`***`, ordonnancement,
-  anti-régression (`REGRESSION.md`).
-- `testing.md` — format de test PASS/FAIL fixe, seuil dérive session (21
-  prompts, prévenance à 18) + résumé de reprise.
-- `project-templates.md` — squelette fichiers mémoire par projet
-  (MEMORY/STATE/UX/Features/todo/REGRESSION/OPEN_SOURCE).
-- `tooling.md` — garde DEV/PROD, fonction shell `iterm_log` (nommage
-  terminal/logs par projet), veille open source.
-- `scripts/iterm_log.sh` — script sourceable, log terminal nommé par projet.
-- `hooks/pre-commit` — bloque tout commit contenant un chemin personnel.
-
-## Installation dans un projet
-
-Copier `CLAUDE.md.example` en `CLAUDE.md` à la racine du projet (ou dossier
-parent commun à plusieurs projets), adapter le chemin vers ce dossier
-`rules/`.
-
-Puis activer le hook anti-leak (bloque tout commit contenant un chemin
-personnel du type `/Users/<nom>`, ce repo étant public) :
-```bash
-cd rules && git config core.hooksPath hooks
-```
-
-Optionnel, terminal nommé par projet :
-```bash
-echo 'source ~/#DEV/rules/scripts/iterm_log.sh' >> ~/.zshrc
-```
-
-## Procédure de mise à jour de ce repo
-
-Toute modification validée de `rules/` (par moi ou un LLM appliquant ces
-règles) : commit → push → mettre à jour la ligne "dernière mise à jour"
-en tête de ce README (date + heure réelles, pas approximatives).
-
-## Historique
-
-Reconstruit à partir d'un ancien système "Prompt-Maitre" (script bash /
-copier-coller manuel) — remplacé par ce système auto-chargé (CLAUDE.md +
-imports), corrigé et testé réellement (ex. `iterm_log` : l'approche
-AppleScript `set log filename to` échouait sur iTerm2 3.6.11, remplacée par
-`script`, util Unix standard).
+- Option lourd : TabbyML serveur autocomplete
