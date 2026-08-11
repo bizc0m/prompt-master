@@ -111,6 +111,7 @@
       margin: 12px 0;
     }
     .module-option {
+      position: relative;
       display: flex;
       align-items: flex-start;
       gap: 9px;
@@ -120,6 +121,32 @@
       border-radius: 8px;
       background: var(--panel);
       font-weight: 700;
+    }
+    .module-option:hover,
+    .module-option:focus-within {
+      border-color: var(--accent);
+    }
+    .module-option::after {
+      content: attr(data-tip);
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: calc(100% + 8px);
+      z-index: 5;
+      display: none;
+      padding: 9px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--ink);
+      background: var(--panel);
+      box-shadow: 0 10px 24px rgba(17, 24, 39, .12);
+      font-size: .86rem;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+    .module-option:hover::after,
+    .module-option:focus-within::after {
+      display: block;
     }
     .module-option input {
       width: 18px;
@@ -137,6 +164,13 @@
       color: var(--ink);
       background: var(--panel);
       font: inherit;
+    }
+    .live-label {
+      margin: 12px 0 8px;
+      color: var(--muted);
+      font-size: .92rem;
+      font-weight: 800;
+      text-transform: uppercase;
     }
     pre {
       white-space: pre-wrap;
@@ -176,19 +210,29 @@
       </div>
       <textarea id="userRequest" placeholder="Écris la demande ici, ou laisse vide et colle-la plus tard."></textarea>
       <div class="module-grid" aria-label="Modules CTxKNL">
-        <label class="module-option"><input type="checkbox" value="Projet / Dev">Projet / Dev</label>
-        <label class="module-option"><input type="checkbox" value="App / Runtime">App / Runtime</label>
-        <label class="module-option"><input type="checkbox" value="Site / Dashboard">Site / Dashboard</label>
-        <label class="module-option"><input type="checkbox" value="GitHub / Git">GitHub / Git</label>
-        <label class="module-option"><input type="checkbox" value="KM / Veille">KM / Veille</label>
-        <label class="module-option"><input type="checkbox" value="Skill / Agent">Skill / Agent</label>
-        <label class="module-option"><input type="checkbox" value="Automation">Automation</label>
-        <label class="module-option"><input type="checkbox" value="Document / Report">Document / Report</label>
+        <label class="module-option" data-tip="Code, bug, tests, architecture, suivi projet, version et livrables."><input type="checkbox" value="Projet / Dev">Projet / Dev</label>
+        <label class="module-option" data-tip="App macOS, runtime, lancement, fenêtres, terminal et preuve d'exécution."><input type="checkbox" value="App / Runtime">App / Runtime</label>
+        <label class="module-option" data-tip="Site, dashboard, HTML, GitHub Pages, lisibilité, responsive et boutons."><input type="checkbox" value="Site / Dashboard">Site / Dashboard</label>
+        <label class="module-option" data-tip="Git, GitHub, commits, branches, Pages, push seulement avec accord."><input type="checkbox" value="GitHub / Git">GitHub / Git</label>
+        <label class="module-option" data-tip="Base de connaissance, veille, sources, index, tags et réutilisation."><input type="checkbox" value="KM / Veille">KM / Veille</label>
+        <label class="module-option" data-tip="Agents, skills, handoff, multi-LLM, queue et reprise de contexte."><input type="checkbox" value="Skill / Agent">Skill / Agent</label>
+        <label class="module-option" data-tip="Scripts, tâches longues, lancement local, surveillance et reprise fiable."><input type="checkbox" value="Automation">Automation</label>
+        <label class="module-option" data-tip="Rapports, README, prompts, documents, changelog et sortie structurée."><input type="checkbox" value="Document / Report">Document / Report</label>
+      </div>
+      <p class="live-label">Bookmarks / services</p>
+      <div class="module-grid" aria-label="Bookmarks et services">
+        <label class="module-option" data-tip="Page publique avec générateur et bouton copier."><input type="checkbox" value="Prompt Master Page" data-url="https://bizc0m.github.io/prompt-master/">Prompt Master Page</label>
+        <label class="module-option" data-tip="Prompt CTxKNL complet en Markdown public."><input type="checkbox" value="CTxKNL Public" data-url="https://bizc0m.github.io/prompt-master/CTxKNL_v0.1.md">CTxKNL Public</label>
+        <label class="module-option" data-tip="Prompt court à coller dans n'importe quel LLM."><input type="checkbox" value="Launcher TXT" data-url="https://bizc0m.github.io/prompt-master/CTxKNL-launcher-prompt.txt">Launcher TXT</label>
+        <label class="module-option" data-tip="Dépôt GitHub officiel du projet."><input type="checkbox" value="GitHub Repo" data-url="https://github.com/bizc0m/prompt-master">GitHub Repo</label>
+        <label class="module-option" data-tip="Source brute utile si GitHub Pages ne répond pas."><input type="checkbox" value="Raw CTxKNL" data-url="https://raw.githubusercontent.com/bizc0m/prompt-master/main/CTxKNL_v0.1.md">Raw CTxKNL</label>
+        <label class="module-option" data-tip="Page locale servie par AI-Station sur ce Mac."><input type="checkbox" value="Local CTxKNL" data-url="http://127.0.0.1:8765/CTxKNL_v0.1.md">Local CTxKNL</label>
       </div>
       <div class="actions">
         <button class="button" type="button" id="generatePrompt">Générer</button>
         <button class="button" type="button" id="clearModules">Reset</button>
       </div>
+      <p class="live-label">Prompt construit en direct</p>
       <pre><code id="customPrompt"></code></pre>
       <p class="copy-status" id="customStatus" aria-live="polite"></p>
     </section>
@@ -235,16 +279,26 @@ Procédure :
     const customPrompt = document.getElementById('customPrompt');
     const customStatus = document.getElementById('customStatus');
     const userRequest = document.getElementById('userRequest');
-    const moduleInputs = Array.from(document.querySelectorAll('.module-option input'));
+    const moduleInputs = Array.from(document.querySelectorAll('[aria-label="Modules CTxKNL"] input'));
+    const bookmarkInputs = Array.from(document.querySelectorAll('[aria-label="Bookmarks et services"] input'));
 
     function selectedModules() {
       return moduleInputs.filter((input) => input.checked).map((input) => input.value);
     }
 
+    function selectedBookmarks() {
+      return bookmarkInputs.filter((input) => input.checked).map((input) => ({
+        name: input.value,
+        url: input.dataset.url
+      }));
+    }
+
     function buildCustomPrompt() {
       const modules = selectedModules();
+      const bookmarks = selectedBookmarks();
       const request = userRequest.value.trim();
       const moduleText = modules.length ? modules.map((name) => `- ${name}`).join('\n') : '- Aucun module imposé : lis la demande puis déduis les modules nécessaires.';
+      const bookmarkText = bookmarks.length ? bookmarks.map((item) => `- ${item.name} : ${item.url}`).join('\n') : '- Aucun bookmark imposé.';
       const requestText = request || '[COLLER LA DEMANDE ICI]';
 
       return `Charge CTxKNL avant de répondre.
@@ -266,6 +320,9 @@ Procédure :
 
 Modules sélectionnés :
 ${moduleText}
+
+Bookmarks / services :
+${bookmarkText}
 
 Demande :
 ${requestText}`;
@@ -295,11 +352,13 @@ ${requestText}`;
 
     clearModules.addEventListener('click', () => {
       moduleInputs.forEach((input) => { input.checked = false; });
+      bookmarkInputs.forEach((input) => { input.checked = false; });
       userRequest.value = '';
       refreshCustomPrompt();
     });
 
     moduleInputs.forEach((input) => input.addEventListener('change', refreshCustomPrompt));
+    bookmarkInputs.forEach((input) => input.addEventListener('change', refreshCustomPrompt));
     userRequest.addEventListener('input', refreshCustomPrompt);
 
     copyCustomPrompt.addEventListener('click', async () => {
