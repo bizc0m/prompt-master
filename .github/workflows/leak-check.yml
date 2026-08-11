@@ -1,0 +1,26 @@
+name: leak-check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Scan for personal path leak
+        run: |
+          MATCHES=$(grep -rl "/Users/JOB" . \
+            --exclude-dir=.git \
+            --exclude=hooks/pre-commit \
+            --exclude=.github/workflows/leak-check.yml \
+            || true)
+          if [ -n "$MATCHES" ]; then
+            echo "❌ Chemin personnel détecté dans :"
+            echo "$MATCHES"
+            exit 1
+          fi
+          echo "✅ Aucun leak détecté."
