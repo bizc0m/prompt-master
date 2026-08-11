@@ -172,6 +172,11 @@
       font-weight: 800;
       text-transform: uppercase;
     }
+    .help-text {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: .95rem;
+    }
     pre {
       white-space: pre-wrap;
       overflow-wrap: anywhere;
@@ -239,6 +244,25 @@
 
     <section>
       <div class="section-head">
+        <h2>Deeplink et bookmarklet</h2>
+        <button class="button primary" type="button" id="copyDeeplink">Copier commande</button>
+      </div>
+      <p class="help-text">Commande macOS pour ouvrir le générateur depuis un terminal, un script ou un autre LLM capable de proposer une commande.</p>
+      <pre><code id="deeplinkCommand">open "https://bizc0m.github.io/prompt-master/"</code></pre>
+      <p class="copy-status" id="deeplinkStatus" aria-live="polite"></p>
+
+      <p class="live-label">Bookmarklet</p>
+      <div class="actions">
+        <a class="button primary" id="bookmarkletLink" href="javascript:(()=>{window.open('https://bizc0m.github.io/prompt-master/','_blank','noopener');})();">Prompt Master</a>
+        <button class="button" type="button" id="copyBookmarklet">Copier bookmarklet</button>
+      </div>
+      <p class="help-text">Glisse le bouton “Prompt Master” dans ta barre de favoris. Sinon copie le code ci-dessous dans l'URL d'un favori.</p>
+      <pre><code id="bookmarkletCode">javascript:(()=>{window.open('https://bizc0m.github.io/prompt-master/','_blank','noopener');})();</code></pre>
+      <p class="copy-status" id="bookmarkletStatus" aria-live="polite"></p>
+    </section>
+
+    <section>
+      <div class="section-head">
         <h2>Prompt à lancer</h2>
         <button class="button primary" type="button" id="copyPrompt">Copier</button>
       </div>
@@ -281,6 +305,12 @@ Procédure :
     const userRequest = document.getElementById('userRequest');
     const moduleInputs = Array.from(document.querySelectorAll('[aria-label="Modules CTxKNL"] input'));
     const bookmarkInputs = Array.from(document.querySelectorAll('[aria-label="Bookmarks et services"] input'));
+    const copyDeeplink = document.getElementById('copyDeeplink');
+    const deeplinkCommand = document.getElementById('deeplinkCommand');
+    const deeplinkStatus = document.getElementById('deeplinkStatus');
+    const copyBookmarklet = document.getElementById('copyBookmarklet');
+    const bookmarkletCode = document.getElementById('bookmarkletCode');
+    const bookmarkletStatus = document.getElementById('bookmarkletStatus');
 
     function selectedModules() {
       return moduleInputs.filter((input) => input.checked).map((input) => input.value);
@@ -371,6 +401,14 @@ ${requestText}`;
         selection.removeAllRanges();
         selection.addRange(range);
       }
+    });
+
+    copyDeeplink.addEventListener('click', async () => {
+      await copyText(deeplinkCommand.textContent, deeplinkStatus, copyDeeplink);
+    });
+
+    copyBookmarklet.addEventListener('click', async () => {
+      await copyText(bookmarkletCode.textContent, bookmarkletStatus, copyBookmarklet);
     });
 
     copyButton.addEventListener('click', async () => {
