@@ -13,10 +13,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Scan for personal path leak
         run: |
-          MATCHES=$(grep -rl "/Users/JOB" . \
-            --exclude-dir=.git \
-            --exclude=hooks/pre-commit \
-            --exclude=.github/workflows/leak-check.yml \
+          MATCHES=$(git grep -l "/Users/JOB" -- . \
+            | grep -vxE 'hooks/pre-commit|\.github/workflows/leak-check\.yml' \
             || true)
           if [ -n "$MATCHES" ]; then
             echo "❌ Chemin personnel détecté dans :"
