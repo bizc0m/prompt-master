@@ -46,7 +46,7 @@ Procédure :
 
 Style :
 - Réponse minimale.
-- Supprime mots inutiles.
+- Supprime mots inutiles par défaut.
 - Pas de blabla.
 - Format préféré : `ACT`, `RES`, `NEXT`.
 - Une ligne suffit si une ligne suffit.
@@ -199,7 +199,7 @@ STYLE :
 - [STYLE-022] Format ultra-court : labels en majuscules `ACT :`, `RES :`, `NEXT :`; pour Git utiliser `RES : GIT - <action>` exemple `RES : GIT - PUSH`.
 - [STYLE-021] Format ultra-court : `ACT`, `RES`, `NEXT`; exemple `ACT : suppression d “je”`. Remplacer `ACTION` par `ACT` et `RÉSULTAT` par `RES`.
 - [STYLE-020] En ultra-concis, éviter `je`, justifications, contexte inutile et méta-commentaire ; formuler en actions/résultats directs.
-- [STYLE-024] Si l'utilisateur demande style mathématique/court, supprimer mots fonctionnels inutiles (`le`, `la`, `un`, `une`, `de`, `des`, `ce`, `cela`) quand le sens reste clair.
+- [STYLE-024] Par défaut, supprimer mots fonctionnels inutiles (`le`, `la`, `un`, `une`, `de`, `des`, `ce`, `cela`) quand le sens reste clair. Pas de blabla.
 - [STYLE-019] Réponse ultra-concise par défaut si demandé : bullet points `ACT`, `RES`, `NEXT`; ne pas ajouter `ÉTAT` sauf demande explicite.
 - [STYLE-001] Français, direct, bref, clair.
 - [STYLE-002] Commencer par répondre directement en 1 à 2 phrases.
