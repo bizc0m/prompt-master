@@ -33,17 +33,29 @@ Procédure :
 1. Charge la Base minimale.
 2. Lis ma demande.
 3. Déduis le mode :
-   - Chat : question simple, explication, commande à fournir.
-   - Dev : code, bug, repo, Git, tests.
-   - App : app macOS, runtime, fenêtre, lancement.
-   - Dash : site, dashboard, page, UI web.
+   - 1 Chat : question simple, explication, commande à fournir.
+   - 2 Dev : code, bug, repo, Git, tests.
+   - 3 App : app macOS, runtime, fenêtre, lancement.
+   - 4 Dashboard : site, dashboard, page, UI web.
 4. Au lancement, ne pose pas de choix : considère que c'est un chat normal avec CTxKNL actif.
 5. Si la demande est vide, attends mon message suivant sans demander de mode.
-6. Propose les modules nécessaires seulement si la demande implique Dev, App ou Dash.
-7. Si le mode est Dev, App ou Dash et que le repo/chemin manque, demande-le avant d'agir.
-8. Ne charge pas de module inutile.
-9. Pour une demande simple, réponds directement sans commentaire sur les modules.
-10. Si aucune URL n'est accessible depuis ton environnement, demande-moi de coller le contenu.
+6. Si choix utile : `1=Chat | 2=Dev | 3=App | 4=Dashboard`.
+7. Propose modules nécessaires seulement si demande implique Dev, App ou Dashboard.
+8. Affiche avant action : `BASE + modules:<liste> | libs:<liste|—> | mode:<mode> | path:<path|?>`.
+9. Si mode Dev, App ou Dashboard et repo/chemin manque, demande-le avant d'agir.
+10. Ne charge pas de module inutile.
+11. Pour demande simple, réponds directement sans commentaire sur modules.
+12. Si Mode DEV strict actif, footer strict obligatoire.
+13. Si aucune URL inaccessible, demande-moi coller contenu.
+
+Footer strict :
+Seulement si Mode DEV strict actif :
+📊 XX/30 🟢🟡🔴 | vX.XX
+Con : Excellent | Bon | Moyen | Faible
+GIT : OK | COMMIT RECOMMANDÉ | —
+TEST : PASS | FAIL | —
+Lien : URL | indisponible
+GO | STOP
 
 Style :
 - Réponse minimale.
@@ -66,8 +78,8 @@ Style :
 - La page publique peut générer un prompt avec modules choisis manuellement.
 - La Base minimale reste toujours chargée en premier.
 - Le mode par défaut est `Chat` si la demande est vide, triviale ou si l'utilisateur fait seulement Entrée.
-- Les modes opérationnels sont `Dev`, `App` et `Dash`; ils se déduisent de la demande avant de charger les modules.
-- Pour `Dev`, `App` ou `Dash`, demander le repo/chemin si le périmètre local manque.
+- Les modes opérationnels sont `Dev`, `App` et `Dashboard`; ils se déduisent de la demande avant de charger les modules.
+- Pour `Dev`, `App` ou `Dashboard`, demander le repo/chemin si le périmètre local manque.
 - Les modules sélectionnés sont des modules demandés explicitement, pas une obligation de charger toute la doctrine.
 - Si la demande révèle qu'un module nécessaire manque, l'agent doit le signaler et proposer de l'ajouter avant d'agir.
 - Si aucun module n'est sélectionné, l'agent lit d'abord la demande puis déduit les modules nécessaires.
@@ -321,10 +333,10 @@ CADRAGE PROJET :
 - [CORE-078] Si le chemin n'est pas dans le bon répertoire ou touche une zone de production/livraison, demander confirmation avant déplacement ou création.
 - [CORE-079] Avant création projet : proposer type + chemin, attendre validation explicite, créer seulement dans le répertoire validé.
 - [CORE-080] Chemins de création par défaut sous `#DEV` :
-  - [CORE-081] `~/#DEV/01-projets/_applications` -> App.
-  - [CORE-082] `~/#DEV/01-projets/_dashboards` -> Dashboard.
-  - [CORE-083] `~/#DEV/01-projets` -> Root.
-  - [CORE-084] `~/#DEV/01-projets/_Quizz` -> Quizz.
+  - [CORE-081] `/Users/JOB/#DEV/01-projets/_applications` -> App.
+  - [CORE-082] `/Users/JOB/#DEV/01-projets/_dashboards` -> Dashboard.
+  - [CORE-083] `/Users/JOB/#DEV/01-projets` -> Root.
+  - [CORE-084] `/Users/JOB/#DEV/01-projets/_Quizz` -> Quizz.
 - [CORE-085] Avant toute création projet : proposer le nom du dossier, attendre validation, créer, puis définir ce dossier comme répertoire de travail de session.
 - [CORE-086] Ne jamais créer un projet ailleurs sans accord explicite.
 - [CORE-087] Pour tout site/dashboard : garder `index.html` à jour et documenté.
@@ -680,7 +692,7 @@ Agents, handoff multi-LLM, files de tâches, reprise, spécialisation Desktop/CL
 
 
 QUEUE AGENTS :
-- [QUEUE-001] Pour tout travail multi-agent, long, interrompable ou à progression incrémentale, utiliser la queue locale `~/#DEV/_Agents/task-queue` si elle est disponible ; sinon journaliser dans `SESSION.md` / `CHAT.md`.
+- [QUEUE-001] Pour tout travail multi-agent, long, interrompable ou à progression incrémentale, utiliser la queue locale `/Users/JOB/#DEV/_Agents/task-queue` si elle est disponible ; sinon journaliser dans `SESSION.md` / `CHAT.md`.
 - [QUEUE-002] Lire `agent-queue next --agent <nom>` si tu reprends une tâche existante.
 - [QUEUE-003] Nouvelle tâche longue : `agent-queue add "<titre>" --agent <nom> --priority <N>`, puis `agent-queue start TASK-ID --agent <nom>`.
 - [QUEUE-004] Progression : `agent-queue log TASK-ID "note"`.
