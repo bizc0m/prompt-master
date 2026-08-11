@@ -54,6 +54,8 @@ Procédure :
 - Si aucun module n'est sélectionné, l'agent lit d'abord la demande puis déduit les modules nécessaires.
 - Le prompt doit se construire en direct pour rendre visibles les modules et services réellement injectés.
 - Les bookmarks/services peuvent être ajoutés comme références explicites, avec une URL conservée dans le prompt généré.
+- Deeplink macOS recommandé pour ouvrir le générateur : `open "https://bizc0m.github.io/prompt-master/"`.
+- Bookmarklet recommandé : `javascript:(()=>{window.open('https://bizc0m.github.io/prompt-master/','_blank','noopener');})();`.
 
 ## Règle d'activation
 
