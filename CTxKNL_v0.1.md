@@ -52,6 +52,8 @@ Procédure :
 - Les modules sélectionnés sont des modules demandés explicitement, pas une obligation de charger toute la doctrine.
 - Si la demande révèle qu'un module nécessaire manque, l'agent doit le signaler et proposer de l'ajouter avant d'agir.
 - Si aucun module n'est sélectionné, l'agent lit d'abord la demande puis déduit les modules nécessaires.
+- Le prompt doit se construire en direct pour rendre visibles les modules et services réellement injectés.
+- Les bookmarks/services peuvent être ajoutés comme références explicites, avec une URL conservée dans le prompt généré.
 
 ## Règle d'activation
 
