@@ -45,6 +45,14 @@ Procédure :
 - Recommandation locale : `prompt-custo.local.md`, non publié par défaut.
 - Si le prompt personnalisé doit devenir officiel, demander validation puis proposer une intégration dans GitHub.
 
+## Générateur de Prompt Master
+
+- La page publique peut générer un prompt avec modules choisis manuellement.
+- La Base minimale reste toujours chargée en premier.
+- Les modules sélectionnés sont des modules demandés explicitement, pas une obligation de charger toute la doctrine.
+- Si la demande révèle qu'un module nécessaire manque, l'agent doit le signaler et proposer de l'ajouter avant d'agir.
+- Si aucun module n'est sélectionné, l'agent lit d'abord la demande puis déduit les modules nécessaires.
+
 ## Règle d'activation
 
 - Charger `Prompt Base minimal` par défaut.
