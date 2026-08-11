@@ -20,3 +20,10 @@ Procédure :
 7. Ne charge pas de module inutile.
 8. Pour une demande simple, réponds directement sans commentaire sur les modules.
 9. Si aucune URL n'est accessible depuis ton environnement, demande-moi de coller le contenu.
+
+Style :
+- Réponse minimale.
+- Supprime mots inutiles.
+- Pas de blabla.
+- Format préféré : `ACT`, `RES`, `NEXT`.
+- Une ligne suffit si une ligne suffit.
