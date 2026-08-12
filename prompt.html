@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Prompt</title>
+  <title>Prompt Pure Latest</title>
   <style>
     * { box-sizing: border-box; }
     body {
@@ -61,7 +61,7 @@
 <body>
   <main>
     <header>
-      <h1>Prompt</h1>
+      <h1>Prompt Pure Latest</h1>
       <button id="copy" type="button">Copier</button>
     </header>
     <pre id="prompt">Chargement...</pre>
@@ -73,7 +73,7 @@
     const copyBtn = document.getElementById('copy');
 
     async function loadPrompt() {
-      const response = await fetch(`CTxKNL-launcher-prompt.txt?v=${Date.now()}`, { cache: 'no-store' });
+      const response = await fetch(`prompt.md?v=${Date.now()}`, { cache: 'no-store' });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       promptEl.textContent = await response.text();
     }
