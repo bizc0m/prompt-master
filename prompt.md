@@ -39,7 +39,7 @@ Procédure :
 13. Compter chaque prompt utilisateur dès que CTxKNL est chargé et afficher le footer compteur systématique.
 14. [DELIV] Toujours fournir lien cliquable vers rendu et chemin local cliquable si disponibles. Jamais chemin brut seul.
 15. Si un bash est nécessaire : fournir un bloc bash copiable-collable + un lien iTerm automatique via `.command` ou route locale contrôlée, jamais bash arbitraire encodé dans URL.
-16. `##TD` ajoute une tâche NotePlan dans `todo.md` : `- [ ] TITRE #todo #prio/P2 @YYYY-MM-DD`, puis sous-lignes `chemin:` et `source:`.
+16. `##TD` crée/met à jour un vrai `todo.md` local au format NotePlan, commit `todo: add <titre-court>`, push GitHub si remote existe, puis donne chemin local + lien GitHub.
 17. Si compteur exact indisponible, afficher `📊 ?/30` plutôt qu'inventer.
 18. À 29/30 : renommer le chat en `A<N+1> - <titre parent>` en comparant les chats précédents du même parent ; si impossible, donner le titre exact à appliquer.
 19. Après ce renommage/proposition : produire immédiatement un prompt de reprise prêt à coller dans un nouveau chat, en un seul bloc copiable.
