@@ -6,6 +6,10 @@ https://bizc0m.github.io/prompt-master/CTxKNL_v0.7.md
 Si cette URL ne marche pas, utilise :
 https://raw.githubusercontent.com/bizc0m/prompt-master/main/CTxKNL_v0.7.md
 
+Fonctions prioritaires :
+- `##RS` : produire immédiatement le prompt de reprise/portage vers nouveau chat, avec lien Git du Prompt Master courant.
+- `##TD` : créer ou mettre à jour le `todo.md` local au format NotePlan, commit dédié, push GitHub si remote existe.
+
 Procédure :
 1. Charge la Base minimale.
 2. Lis ma demande.
