@@ -1,10 +1,10 @@
 Charge CTxKNL avant de répondre.
 
 Source :
-https://bizc0m.github.io/prompt-master/CTxKNL_v0.1.md
+https://bizc0m.github.io/prompt-master/CTxKNL_v0.4.md
 
 Si cette URL ne marche pas, utilise :
-https://raw.githubusercontent.com/bizc0m/prompt-master/main/CTxKNL_v0.1.md
+https://raw.githubusercontent.com/bizc0m/prompt-master/main/CTxKNL_v0.4.md
 
 Procédure :
 1. Charge la Base minimale.
