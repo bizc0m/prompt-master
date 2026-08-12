@@ -5,7 +5,8 @@ Station IA locale pour macOS Apple Silicon M5.
 ## Liens GitHub
 
 - Dépôt Prompt Master : <https://github.com/bizc0m/prompt-master>
-- CTxKNL : <https://github.com/bizc0m/prompt-master/blob/main/CTxKNL_v0.1.md>
+- CTxKNL : <https://github.com/bizc0m/prompt-master/blob/main/CTxKNL_v0.4.md>
+- Versions : <https://github.com/bizc0m/prompt-master/blob/main/VERSIONS.md>
 - Prompt à coller dans n'importe quel LLM : <https://github.com/bizc0m/prompt-master/blob/main/CTxKNL-launcher-prompt.txt>
 - Générateur de Prompt Master : <https://bizc0m.github.io/prompt-master/>
 - Prompt pure latest : <https://bizc0m.github.io/prompt-master/prompt.html>
@@ -16,7 +17,9 @@ Station IA locale pour macOS Apple Silicon M5.
 
 - `AI-Station.html` : page routeur locale
 - `V2/` : version propre courante
-- `V2/CTxKNL_v0.1.md` : Prompt Master modulaire Context Kernel
+- `V2/CTxKNL_v0.4.md` : Prompt Master modulaire Context Kernel
+- `CTxKNL_v0.1.md` : ancienne version / compat
+- `VERSIONS.md` : numerotation et historique
 - `CTxKNL-launcher-prompt.txt` : prompt court à coller dans n'importe quel LLM
 - `index.html` : page publique avec simulateur projet, cartouches, générateur de modules et bookmarks/services
 - `prompt.md` : prompt latest source, toujours mis à jour
