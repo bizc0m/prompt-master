@@ -2,7 +2,7 @@
 
 ## Active
 
-- `v0.4` : `CTxKNL_v0.4.md`
+- `v0.7` : `CTxKNL_v0.7.md`
 
 ## Latest
 
@@ -13,6 +13,7 @@
 ## Historique
 
 - `v0.1` : `CTxKNL_v0.1.md`, ancienne version / compat.
+- `v0.4` : `CTxKNL_v0.4.md`, version numerotation +0.3.
 
 ## Regle
 
