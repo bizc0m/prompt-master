@@ -6,6 +6,7 @@
 
 ## Latest
 
+- `latest.md` : alias brut latest, meme contenu que `prompt.md`.
 - `prompt.md` : prompt latest court, toujours mis a jour.
 - `prompt.html` : page latest qui lit `prompt.md`.
 
