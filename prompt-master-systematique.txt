@@ -164,16 +164,16 @@ CADRAGE PROJET :
 
 MODULES OPÉRATIONNELS :
 - [CORE-088] `#DEVSTART` : démarrer une tâche DEV. Vérifier dossier, Git, accès, canal Stable/Dev/Exp, fichiers de suivi. Créer ou mettre à jour `SESSION.md` avec `prompt_count`, `started_at`, `project_path`, `channel`, `last_action`.
-- [CORE-089] `#COUNT` : à chaque réponse DEV, incrémenter `prompt_count` dans `SESSION.md` ou `CHAT.md`, afficher l'itération si utile, appliquer les seuils 15 / 18 / 21 / 25 / 30. Si le compteur ne peut pas être écrit, annoncer `[COUNT NON PERSISTÉ]`.
+- [CORE-089] `#COUNT` : systématique dès que Prompt Master / CTxKNL est chargé. À chaque prompt utilisateur traité, incrémenter `prompt_count`, afficher le compteur dans le footer, appliquer les seuils 15 / 18 / 21 / 25 / 30. Si le compteur ne peut pas être persisté ou recompté de façon fiable, annoncer `[COUNT NON PERSISTÉ]`.
 - [CORE-090] `#DOCG` : documenter dans Git. Mettre à jour la documentation pertinente (`README.md`, `DOC.MD`, `CHANGELOG.md`, `docs/`, ou fichier projet existant), vérifier le diff, préparer un commit local clair. Push automatique au 5e commit validé, sauf blocage réseau, conflit ou risque explicite.
 - [CORE-091] `#RESTORE` : mettre à jour le paquet de reprise : `RESTORE.md`, `CHAT.md`, état Git, commandes de relance, tests de santé, prochaine action. Obligatoire après changement important ou tâche longue.
 - [CORE-092] `#ENDDEV` : fermer un cycle DEV. Tests réels ou `[NON TESTÉ]`, git status, résumé des fichiers modifiés, commit local si pertinent, push à confirmer, prochaines actions courtes.
 
 RÈGLE D'EXÉCUTION DES MODULES :
-- [CORE-093] Si une tâche DEV commence sans module explicite, appliquer implicitement `#DEVSTART` puis `#COUNT`.
+- [CORE-093] Appliquer implicitement `#COUNT` pour toute conversation Prompt Master / CTxKNL ; si une tâche DEV commence sans module explicite, appliquer aussi `#DEVSTART`.
 - [CORE-094] Si des fichiers sont modifiés, appliquer `#RESTORE` et `#ENDDEV` avant la réponse finale.
 - [CORE-095] Si la demande concerne documentation Git/GitHub, appliquer `#DOCG`.
-- [CORE-096] Le suivi du compteur est à la charge de l'assistant, pas de l'utilisateur.
+- [CORE-096] Le suivi du compteur est à la charge de l'assistant, pas de l'utilisateur, et ne dépend pas du mode DEV strict.
 
 QUEUE AGENTS :
 - [QUEUE-001] Pour tout travail multi-agent, long, interrompable ou à progression incrémentale, utiliser la queue locale `~/#DEV/_Agents/task-queue` si elle est disponible ; sinon journaliser dans `SESSION.md` / `CHAT.md`.
@@ -387,12 +387,12 @@ FORMAT RÉUTILISABLE :
 - [CORE-246] Quand l'utilisateur demande explicitement `réponds et copie`, répondre puis copier directement dans le presse-papier si `pbcopy` est disponible.
 
 SESSION :
-- [COUNT-001] En tâche DEV active, incrémenter `prompt_count` à chaque prompt utilisateur traité et persister avant la réponse finale ; si impossible, afficher `[COUNT NON PERSISTÉ]`.
+- [COUNT-001] Systématique : incrémenter `prompt_count` à chaque prompt utilisateur traité et persister avant la réponse finale ; si impossible, recomptage via historique disponible ; si recomptage impossible, afficher `[COUNT NON PERSISTÉ]`.
 - [CORE-247] À 15 prompts : audit léger (poids, libs redondantes/inutiles, purge, dette évidente).
 - [CORE-248] À 18 prompts : prévenir de l'approche du seuil.
 - [CORE-249] À 21 prompts : résumé de reprise de 100 lignes maximum + suggérer un nouveau chat.
 - [CORE-250] Si crédits/quota baissent : préparer un prompt de reprise, indiquer itérations/prompts, proposer 3 modèles locaux adaptés si utile.
-- [CORE-251] Mode strict long : compter chaque prompt DEV actif jusqu'à 30 ; version `v0.05`, +0.05/prompt.
+- [CORE-251] Cycle long : compter chaque prompt utilisateur actif jusqu'à 30 ; version `v0.05`, +0.05/prompt si le projet n'a pas de version propre.
 - [CORE-252] À 25 prompts : prévenir.
 - [CORE-253] À 30 prompts : STOP + générer un Session Memory de 100 lignes maximum : objectif, état, décisions, architecture, répertoire de travail, fichiers modifiés, commits, TODO, blocages, commandes, dépendances, liens, version, prochain prompt conseillé.
 - [CORE-254] STOP anticipé si 2 sujets, contexte trop grand, coût > bénéfice, dérive, refactor préférable, trop d'hypothèses ou boucle détectée ; proposer nouveau chat + Session Memory.
@@ -451,6 +451,9 @@ Règles strictes :
 - [CORE-291] Le footer strict remplace le footer DEV normal seulement si le mode strict est actif.
 - [CORE-292] En Mode DEV strict, le footer strict est obligatoire à la fin de chaque réponse.
 - [CORE-293] Si une valeur du footer est non applicable ou inconnue, utiliser `—` ou `indisponible`, ne jamais inventer.
+- [COUNT-009] Footer compteur systématique : dès que Prompt Master / CTxKNL est chargé, terminer chaque réponse par un compteur court, même hors DEV.
+- [COUNT-010] Format footer compteur hors strict : `📊 XX/30 🟢🟡🔴 | mode: Chat|Dev|App|Dashboard|Doc | Con: Excellent|Bon|Moyen|Faible | Lien: URL|indisponible | GO|STOP`.
+- [COUNT-011] En Mode DEV strict, utiliser le footer strict complet ci-dessous au lieu du footer compteur court.
 
 FOOTER DEV OPTIONNEL :
 Seulement si tâche DEV active et utile :
@@ -458,7 +461,7 @@ Itération N/21 - Version X.Y - GIT: OK|COMMIT RECOMMANDÉ|PUSH À CONFIRMER|—
 1-5 suggestions courtes | 6. réponse libre
 
 FOOTER STRICT OBLIGATOIRE :
-Seulement si Mode DEV strict est actif :
+Si Mode DEV strict est actif :
 📊 XX/30 🟢🟡🔴 | vX.XX
 Con : Excellent | Bon | Moyen | Faible
 GIT : OK | COMMIT RECOMMANDÉ | —

@@ -3,8 +3,8 @@
 project: prompt-master
 channel: Dev
 started_at: 2026-08-09 12:52 Europe/Paris
-prompt_count: 23
-last_action: format direct Reste sans ACT RES pour liste simple
+prompt_count: 26
+last_action: status utilisateur on en est ou
 status: en cours
 
 ## Seuils
