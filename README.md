@@ -10,6 +10,7 @@ Station IA locale pour macOS Apple Silicon M5.
 - Prompt à coller dans n'importe quel LLM : <https://github.com/bizc0m/prompt-master/blob/main/CTxKNL-launcher-prompt.txt>
 - Générateur de Prompt Master : <https://bizc0m.github.io/prompt-master/>
 - Prompt pure latest : <https://bizc0m.github.io/prompt-master/prompt.html>
+- Prompt brut latest : <https://bizc0m.github.io/prompt-master/latest.md>
 - Prompt Markdown latest : <https://bizc0m.github.io/prompt-master/prompt.md>
 - Source officielle : <https://github.com/bizc0m/prompt-master/blob/main/assistant-dev-prompt.md>
 
@@ -23,6 +24,7 @@ Station IA locale pour macOS Apple Silicon M5.
 - `CTxKNL-launcher-prompt.txt` : prompt court à coller dans n'importe quel LLM
 - `index.html` : page publique avec simulateur projet, cartouches, générateur de modules et bookmarks/services
 - `prompt.md` : prompt latest source, toujours mis à jour
+- `latest.md` : alias brut latest, même contenu que `prompt.md`
 - `prompt.html` : page pure latest stable qui lit `prompt.md`, même URL quelle que soit la version
 - Deeplink macOS : `open "https://bizc0m.github.io/prompt-master/"`
 - Bookmarklet : `javascript:(()=>{window.open('https://bizc0m.github.io/prompt-master/','_blank','noopener');})();`
