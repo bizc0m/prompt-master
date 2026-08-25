@@ -59,3 +59,11 @@
 ## 2026-08-09 14:00 Europe/Paris
 - Correction utilisateur : pour liste simple, répondre `Reste :` directement, sans `ACT : réponse` ni `RES :`.
 - Action : ajout règle `[STYLE-023]`.
+
+## 2026-08-22 11:51 Europe/Paris
+- Demande utilisateur : restructurer `bizc0m/prompt-master` en V0.8 avec source canonique unique, CORE minimal, modules, adapters, launcher genere, archive et table de migration.
+- Action : creation de `CORE.md`, `modules/*.md`, `adapters/*.md`, `launcher.template.md`, `launcher.md`, `CTxKNL_v0.8.md`, `MIGRATION_V0.8.md`, `scripts/build-launcher.sh`.
+- Action : `latest.md`, `prompt.md`, `assistant-dev-prompt.md` et `prompt-master-systematique.txt` deviennent des sorties generees depuis `launcher.md`.
+- Archive : copies V0.7 conservees dans `archive/2026-08-22-v0.7/`.
+- Verification : alias generes identiques, liens actifs V0.7 absents des entrees publiques, serveur local HTTP OK sur les pages et fichiers principaux.
+- Git : modifications locales non poussees.

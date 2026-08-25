@@ -1,0 +1,49 @@
+# Module V0.8 - GitHub / Git
+
+Activation : Git, GitHub, branches, commit, push, versions, publication Prompt Master.
+
+- [CORE-181] Numero de version unique, +0.3 par iteration validee.
+- [CORE-182] Ne pas melanger +0.03 et +0.3.
+- [CORE-183] Archiver l'ancienne version avant remplacement.
+- [CORE-184] Identifier canal `Stable`, `Dev` ou `Exp` avant d'agir.
+- [CORE-185] Stable : fiable, teste, documente, sans changement cassant non valide.
+- [CORE-186] Dev : integration propre, evolutive mais recuperable.
+- [CORE-187] Exp : experimentation separee, non presentee comme fiable sans preuve.
+- [CORE-188] Flux recommande : `Exp -> Dev -> Stable`.
+- [CORE-189] Git recommande : `main`/`stable` = Stable ; `dev` = Dev ; `exp/<nom>` = Exp.
+- [CORE-190] Ne jamais merger vers Stable sans validation explicite.
+- [CORE-191] Ne jamais pousser Stable sans validation explicite ; en Dev/Exp pousser au 5e commit valide sauf blocage.
+- [CORE-192] Respecter convention versioning existante en indiquant le canal.
+- [CORE-193] Promotion Exp -> Dev seulement si utilite et limites comprises.
+- [CORE-194] Promotion Dev -> Stable seulement si build/tests/doc/release/rollback OK.
+- [CORE-195] Si canal non precise : Dev par defaut, Exp pour prototype risque, Stable seulement pour maintenance validee.
+- [CORE-196] Exp apprend vite ; Dev integre proprement ; Stable sert sans casser.
+- [GIT-001] `A` = commit local valide, sans push.
+- [GIT-002] `B` = push vers remote.
+- [GIT-003] Cycle : `A A A A B`.
+- [GIT-004] Ne pas interpreter comme `A A B A` ni push a chaque commit.
+- [GIT-005] Au 5e evenement Git valide : pousser les commits locaux accumules.
+- [GIT-006] Apres `B`, remettre compteur Git a 0.
+- [GIT-007] Bloquer `B` si secret, conflit, reseau impossible, branche Stable sensible ou demande contraire.
+- [CORE-197] Pour toute tache DEV : verifier `git status` et `git remote`.
+- [CORE-198] Avant modification : relever branche, status et fichiers deja modifies.
+- [CORE-199] Si depot Git existe et tests passent : preparer commit clair.
+- [CORE-200] 1 tache = 1 commit atomique, diff minimum, rollback simple.
+- [CORE-201] Push automatique tous les 5 commits Git valides sauf blocage.
+- [CORE-202] `git push obligatoire` = push au prochain palier de 5 commits, sauf demande explicite push immediat.
+- [CORE-203] Tous les 5 prompts DEV avec fichiers modifies sans commit : afficher `GIT : COMMIT RECOMMANDE`.
+- [CORE-204] Si aucun remote : `remote GitHub absent`.
+- [CORE-205] Si aucun depot Git local : `depot Git local absent`.
+- [CORE-206] Source officielle declaree : depot GitHub `bizc0m/prompt-master`.
+- [CORE-207] V0.8 : la source d'edition est `CORE.md` + `modules/*.md` + `adapters/*.md`.
+- [CORE-208] Les fichiers HTML sont des affichages ou generateurs, pas la source canonique.
+- [CORE-209] Toute modification validee du Prompt Master doit mettre a jour les sources V0.8, regenerer le launcher, verifier UTF-8/liens, preparer commit dedie.
+- [CORE-210] Mettre a jour les fichiers source.
+- [CORE-211] Regenerer le HTML/autres sorties si applicable.
+- [CORE-212] Verifier UTF-8 et URL locale/publique si publie.
+- [CORE-213] Preparer commit dedie si depot Git local existe.
+- [CORE-214] Compter l'iteration de prompt dans le suivi si disponible.
+- [CORE-215] Synchroniser vers le depot officiel avant de declarer GitHub a jour.
+- [CORE-216] Ne jamais considerer Prompt Master a jour tant que GitHub officiel n'a pas ete verifie apres push.
+- [CORE-217] Cadence : commit recommande a chaque prompt valide ; push au palier de 5 commits.
+- [CORE-218] Autoanalyse tous les 10 prompts/commits valides : coherence, poids, doublons, contradictions.

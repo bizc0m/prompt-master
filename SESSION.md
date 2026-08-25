@@ -3,8 +3,8 @@
 project: prompt-master
 channel: Dev
 started_at: 2026-08-09 12:52 Europe/Paris
-prompt_count: 26
-last_action: status utilisateur on en est ou
+prompt_count: 27
+last_action: restructuration prompt-master v0.8
 status: en cours
 
 ## Seuils
@@ -27,3 +27,6 @@ reference_scheme: PREFIX-CODE3 base26 AAA-ZZZ
 rule_numbering: [DOM-NNN]
 
 response_format: ACT / RES / NEXT, bullet points, sans je, sans ETAT
+
+v0_8_source: CORE.md + modules/*.md + adapters/*.md
+v0_8_generated: launcher.md, CTxKNL_v0.8.md, latest.md, prompt.md, assistant-dev-prompt.md, prompt-master-systematique.txt
