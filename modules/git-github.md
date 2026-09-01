@@ -25,6 +25,7 @@ Activation : Git, GitHub, branches, commit, push, versions, publication Prompt M
 - [GIT-005] Au palier 5, creer un commit dedie avec message court et etat verifie.
 - [GIT-006] Au palier 10, creer le commit manquant si besoin, pousser les commits locaux accumules, puis verifier GitHub/Pages si applicable.
 - [GIT-007] Bloquer `B` si secret, conflit, reseau impossible, branche Stable sensible ou demande contraire.
+- [GIT-008] Pour reprise par autres agents, pousser a chaque checkpoint coherent si remote OK et aucun blocage ; minimum : commit palier 5, push palier 10, push final.
 - [CORE-197] Pour toute tache DEV : verifier `git status` et `git remote`.
 - [CORE-198] Avant modification : relever branche, status et fichiers deja modifies.
 - [CORE-199] Si depot Git existe et tests passent : preparer commit clair.

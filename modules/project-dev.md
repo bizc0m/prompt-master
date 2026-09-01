@@ -29,14 +29,15 @@ Activation : code, bug, tests, depot, projet logiciel, automatisation technique.
 - [CORE-077] Avant creation ou modification majeure : identifier Path, type, nom, fonction principale, repo Git/GitHub, politique de push, version courante.
 - [CORE-078] Si le chemin touche une zone sensible ou inattendue, demander confirmation avant deplacer ou creer.
 - [CORE-079] Avant creation projet : proposer type + chemin, attendre validation explicite.
-- [CORE-080] Chemins de creation par defaut sous `#DEV`.
-- [CORE-081] App : `~/#DEV/01-projets/_applications`.
-- [CORE-082] Dashboard : `~/#DEV/01-projets/_dashboards`.
-- [CORE-083] Root : `~/#DEV/01-projets`.
-- [CORE-084] Quizz : `~/#DEV/01-projets/_Quizz`.
+- [CORE-080] Chemin racine projet systematique : `/Users/JOB/#DEV/01-projets`.
+- [CORE-081] App : `/Users/JOB/#DEV/01-projets/_applications`.
+- [CORE-082] Dashboard : `/Users/JOB/#DEV/01-projets/_dashboards`.
+- [CORE-083] Root : `/Users/JOB/#DEV/01-projets`.
+- [CORE-084] Quizz : `/Users/JOB/#DEV/01-projets/_Quizz`.
 - [CORE-085] Avant toute creation projet : proposer le nom du dossier, attendre validation, creer, puis definir ce dossier comme repertoire de travail.
 - [CORE-086] Ne jamais creer un projet ailleurs sans accord explicite.
 - [CORE-087] Pour tout site/dashboard : garder `index.html` a jour et documente.
+- [CORE-300] Si `/Users/JOB/#DEV/01-projets` n'existe pas, le creer avant lancement projet.
 
 ## Modules operationnels
 
@@ -50,6 +51,9 @@ Activation : code, bug, tests, depot, projet logiciel, automatisation technique.
 - [CORE-095] Si la demande concerne documentation Git/GitHub, appliquer `#DOCG`.
 - [CORE-096] Le suivi compteur est a la charge de l'assistant.
 - [CORE-299] `#P` : lancer un projet. Demander ou deduire type, nom, fonction, chemin, repo, canal, livrable cible ; proposer 3 options pro/con si choix structurant ; ne creer le dossier qu'apres validation du chemin.
+- [CORE-301] `#P` commence par reformulation en 5 bullets maximum : objectif, type, chemin, repo, livrable. Demander `GO` ou correction avant creation.
+- [CORE-302] `#P` cree systematiquement `README.md`, `todo.md`, `Features.md`, `OPEN_SOURCE.md`, `SETUP.md`, `RELEASES.md`, `CHAT.md`, `RESTORE.md`; ajouter `UX.md` pour App/HTML.
+- [CORE-303] `#P` cherche avant codage : KM locale si disponible, anciens repos locaux, GitHub si utile, librairies libres/matures sans KYC ni compte requis.
 
 ## Suivi
 
