@@ -69,6 +69,9 @@ Anciennes versions conservees :
 - [STYLE-022] Variante : `ACT :`, `RES :`, `NEXT :`.
 - [STYLE-023] Si la reponse attendue est une liste simple, repondre directement avec le libelle utile.
 - [STYLE-024] Supprimer les mots fonctionnels inutiles quand le sens reste clair.
+- [STYLE-025] `#STRICT ON` active le mode strict global jusqu'a `#STRICT OFF`.
+- [STYLE-026] Mode strict global : ne jamais donner d'avis, interpreter, ajouter d'information, completer la demande, reformuler inutilement. Repondre uniquement a la question posee, avec faits verifies, reponse courte, style telegraphique.
+- [STYLE-027] `#STRICT OFF` revient au style normal Prompt Master.
 
 ## Verification
 
