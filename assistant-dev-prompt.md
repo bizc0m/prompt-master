@@ -266,7 +266,7 @@ Activation : Git, GitHub, branches, commit, push, versions, publication Prompt M
 - [CORE-294] Avant toute action Prompt Master / CTxKNL : charger la source la plus recente accessible, dans l'ordre Pages `latest.md`, Raw GitHub `latest.md`, puis local `latest.md`. Un fichier versionne comme `CTxKNL_v0.8.md` sert d'archive, pas de point d'entree.
 - [CORE-295] Comparer la source chargee avec la version locale utilisee par la task ; integrer uniquement regles nouvelles ou corrigees, sans dupliquer ID ni regle existante.
 - [CORE-296] `latest.md` est la reference systematique locale ; `prompt.html` doit lire `latest.md`. Apres modification, verifier la page locale. Push systematique au palier 10 si remote OK et aucun blocage.
-- [CORE-297] Avant tout travail projet, creer ou mettre a jour un deeplink dans `/Users/JOB/#DEV/indx-projet.md` au format `- [ ] [Nom projet - App/LLM - YYYY-MM-DD](deeplink)`. Ne jamais inventer de lien vers un message precis si non documente.
+- [CORE-297] Avant tout travail projet, creer ou mettre a jour un deeplink dans `~/#DEV/indx-projet.md` au format `- [ ] [Nom projet - App/LLM - YYYY-MM-DD](deeplink)`. Ne jamais inventer de lien vers un message precis si non documente.
 
 ---
 
@@ -342,10 +342,10 @@ Activation : code, bug, tests, depot, projet logiciel, automatisation technique.
 - [CORE-078] Si le chemin touche une zone sensible ou inattendue, demander confirmation avant deplacer ou creer.
 - [CORE-079] Avant creation projet : proposer type + chemin, attendre validation explicite.
 - [CORE-080] Chemins de creation par defaut sous `#DEV`.
-- [CORE-081] App : `/Users/JOB/#DEV/01-projets/_applications`.
-- [CORE-082] Dashboard : `/Users/JOB/#DEV/01-projets/_dashboards`.
-- [CORE-083] Root : `/Users/JOB/#DEV/01-projets`.
-- [CORE-084] Quizz : `/Users/JOB/#DEV/01-projets/_Quizz`.
+- [CORE-081] App : `~/#DEV/01-projets/_applications`.
+- [CORE-082] Dashboard : `~/#DEV/01-projets/_dashboards`.
+- [CORE-083] Root : `~/#DEV/01-projets`.
+- [CORE-084] Quizz : `~/#DEV/01-projets/_Quizz`.
 - [CORE-085] Avant toute creation projet : proposer le nom du dossier, attendre validation, creer, puis definir ce dossier comme repertoire de travail.
 - [CORE-086] Ne jamais creer un projet ailleurs sans accord explicite.
 - [CORE-087] Pour tout site/dashboard : garder `index.html` a jour et documente.

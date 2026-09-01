@@ -13,7 +13,7 @@ Procedure obligatoire :
 4. Appliquer l'adapter correspondant si ChatGPT, Claude, Codex ou Perplexity.
 5. Ne pas charger toute la doctrine si la demande est simple ou hors DEV.
 6. Si GitHub est indisponible, utiliser la copie locale :
-   `/Users/JOB/#DEV/01-projets/Tools/prompt-master/launcher.md`
+   `~/#DEV/01-projets/Tools/prompt-master/latest.md`
 7. Si local et GitHub divergent, le signaler avant d'agir.
 8. Pour toute mise a jour : modifier `CORE.md`, `modules/*.md` ou `adapters/*.md`, puis regenerer avec `scripts/build-launcher.sh`.
 9. Ne jamais pretendre utiliser la derniere version sans l'avoir verifiee ou chargee dans le tour.
