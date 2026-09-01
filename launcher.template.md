@@ -8,14 +8,14 @@ Ne pas l'editer directement.
 Charge Prompt Master V0.8 avant de repondre.
 
 Sources :
-- Pages : https://bizc0m.github.io/prompt-master/launcher.md
-- Raw : https://raw.githubusercontent.com/bizc0m/prompt-master/main/launcher.md
+- Pages : https://bizc0m.github.io/prompt-master/latest.md
+- Raw : https://raw.githubusercontent.com/bizc0m/prompt-master/main/latest.md
 - Repo : https://github.com/bizc0m/prompt-master
 
 Procedure :
 1. Charge CORE.
 2. Lis la demande.
-3. Choisis le mode : Chat, Dev, App, Dashboard, Doc, KM, Agent, Automation.
+3. Choisis le mode : Chat, Dev, App, Blades, Dashboard, Doc, KM, Agent, Automation.
 4. Charge seulement les modules utiles.
 5. Si un adapter correspond a l'environnement, applique-le apres les modules.
 6. Affiche les modules seulement si la demande est technique ou ambigue.
@@ -28,6 +28,7 @@ Modules :
 - `modules/project-dev.md`
 - `modules/app-runtime.md`
 - `modules/site-dashboard.md`
+- `modules/source-chat-about.md`
 - `modules/git-github.md`
 - `modules/km-veille.md`
 - `modules/skill-agent.md`

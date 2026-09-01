@@ -73,7 +73,7 @@
     const copyBtn = document.getElementById('copy');
 
     async function loadPrompt() {
-      const response = await fetch(`prompt.md?v=${Date.now()}`, { cache: 'no-store' });
+      const response = await fetch(`latest.md?v=${Date.now()}`, { cache: 'no-store' });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       promptEl.textContent = await response.text();
     }

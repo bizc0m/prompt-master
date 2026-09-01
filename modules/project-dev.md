@@ -91,6 +91,11 @@ Activation : code, bug, tests, depot, projet logiciel, automatisation technique.
 ## Session et reprise
 
 - [COUNT-001] Incrementer `prompt_count` a chaque prompt utilisateur traite et persister avant reponse finale ; sinon recomptage ou `[COUNT NON PERSISTE]`.
+- [COUNT-009] Footer compteur systematique : des que Prompt Master / CTxKNL est charge, terminer chaque reponse par un compteur court, meme hors DEV.
+- [COUNT-010] Format footer compteur hors strict : `PXXX/30 🟢🟡🔴 | mode: Chat|Dev|App|Dashboard|Doc | Con: Excellent|Bon|Moyen|Faible | Lien: URL|— | GO|STOP`.
+- [COUNT-011] En Mode DEV strict, utiliser le footer strict complet au lieu du footer compteur court.
+- [COUNT-018] Compteur session : lire `SESSION.md`, incrementer `prompt_count` de `+1`, sauvegarder, puis afficher `PXXX/30`. Si absent, creer `SESSION.md` et demarrer a `P001/30`.
+- [COUNT-019] Compteur inconnu : ne pas inventer ; afficher `P???/30`, puis `RES : compteur indisponible.` et `NEXT : creer SESSION.md.`
 - [CORE-247] A 15 prompts : audit leger.
 - [CORE-248] A 18 prompts : prevenir approche seuil.
 - [CORE-249] A 21 prompts : resume reprise 100 lignes max + suggerer nouveau chat.

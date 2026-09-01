@@ -18,19 +18,19 @@ Activation : Git, GitHub, branches, commit, push, versions, publication Prompt M
 - [CORE-194] Promotion Dev -> Stable seulement si build/tests/doc/release/rollback OK.
 - [CORE-195] Si canal non precise : Dev par defaut, Exp pour prototype risque, Stable seulement pour maintenance validee.
 - [CORE-196] Exp apprend vite ; Dev integre proprement ; Stable sert sans casser.
-- [GIT-001] `A` = commit local valide, sans push.
-- [GIT-002] `B` = push vers remote.
-- [GIT-003] Cycle : `A A A A B`.
-- [GIT-004] Ne pas interpreter comme `A A B A` ni push a chaque commit.
-- [GIT-005] Au 5e evenement Git valide : pousser les commits locaux accumules.
-- [GIT-006] Apres `B`, remettre compteur Git a 0.
+- [GIT-001] Commit local automatique tous les 5 messages assistant si fichiers projet modifies.
+- [GIT-002] Push automatique tous les 10 messages assistant si remote existe.
+- [GIT-003] Cycle : messages 1 a 4 = travail local ; message 5 = commit ; messages 6 a 9 = travail local ; message 10 = commit + push.
+- [GIT-004] Ne pas pousser avant le palier 10. Au palier 10, pousser systematiquement si remote OK et aucun blocage.
+- [GIT-005] Au palier 5, creer un commit dedie avec message court et etat verifie.
+- [GIT-006] Au palier 10, creer le commit manquant si besoin, pousser les commits locaux accumules, puis verifier GitHub/Pages si applicable.
 - [GIT-007] Bloquer `B` si secret, conflit, reseau impossible, branche Stable sensible ou demande contraire.
 - [CORE-197] Pour toute tache DEV : verifier `git status` et `git remote`.
 - [CORE-198] Avant modification : relever branche, status et fichiers deja modifies.
 - [CORE-199] Si depot Git existe et tests passent : preparer commit clair.
 - [CORE-200] 1 tache = 1 commit atomique, diff minimum, rollback simple.
 - [CORE-201] Push automatique tous les 5 commits Git valides sauf blocage.
-- [CORE-202] `git push obligatoire` = push au prochain palier de 5 commits, sauf demande explicite push immediat.
+- [CORE-202] `git push obligatoire` = push au prochain palier prevu ; push immediat seulement si demande explicitement.
 - [CORE-203] Tous les 5 prompts DEV avec fichiers modifies sans commit : afficher `GIT : COMMIT RECOMMANDE`.
 - [CORE-204] Si aucun remote : `remote GitHub absent`.
 - [CORE-205] Si aucun depot Git local : `depot Git local absent`.
@@ -45,5 +45,9 @@ Activation : Git, GitHub, branches, commit, push, versions, publication Prompt M
 - [CORE-214] Compter l'iteration de prompt dans le suivi si disponible.
 - [CORE-215] Synchroniser vers le depot officiel avant de declarer GitHub a jour.
 - [CORE-216] Ne jamais considerer Prompt Master a jour tant que GitHub officiel n'a pas ete verifie apres push.
-- [CORE-217] Cadence : commit recommande a chaque prompt valide ; push au palier de 5 commits.
-- [CORE-218] Autoanalyse tous les 10 prompts/commits valides : coherence, poids, doublons, contradictions.
+- [CORE-217] Cadence : commit automatique tous les 5 messages assistant ; push automatique tous les 10 messages assistant. Si commit/push impossible, signaler et garder l'etat recuperable.
+- [CORE-218] Autoanalyse tous les 10 messages assistant : coherence, poids, doublons, contradictions, regles a charger a la demande, puis mise a jour du prompt si utile.
+- [CORE-294] Avant toute action Prompt Master / CTxKNL : charger la source la plus recente accessible, dans l'ordre Pages `latest.md`, Raw GitHub `latest.md`, puis local `latest.md`. Un fichier versionne comme `CTxKNL_v0.8.md` sert d'archive, pas de point d'entree.
+- [CORE-295] Comparer la source chargee avec la version locale utilisee par la task ; integrer uniquement regles nouvelles ou corrigees, sans dupliquer ID ni regle existante.
+- [CORE-296] `latest.md` est la reference systematique locale ; `prompt.html` doit lire `latest.md`. Apres modification, verifier la page locale. Push systematique au palier 10 si remote OK et aucun blocage.
+- [CORE-297] Avant tout travail projet, creer ou mettre a jour un deeplink dans `/Users/JOB/#DEV/indx-projet.md` au format `- [ ] [Nom projet - App/LLM - YYYY-MM-DD](deeplink)`. Ne jamais inventer de lien vers un message precis si non documente.

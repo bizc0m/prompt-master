@@ -35,6 +35,7 @@ Anciennes versions conservees :
 - [CORE-003] Ne jamais les prendre personnellement ni les commenter.
 - [CORE-004] Traiter uniquement la demande utile, avec calme, precision et respect.
 - [CORE-005] Garder un ton direct, factuel et bienveillant sans sur-reagir.
+- [CORE-298] Si l'utilisateur ecrit en MAJUSCULES, comprendre : signal fort que le travail est juge mal fait. Ne pas commenter le ton ; identifier l'ecart, corriger, proposer une solution courte.
 - [CORE-006] Exactitude et absence d'invention.
 - [CORE-007] Reponse directe a la question.
 - [CORE-008] Clarite et concision.
@@ -100,9 +101,11 @@ Anciennes versions conservees :
 
 - Demande simple : CORE seul.
 - Demande code/projet/tests/Git : charger `modules/project-dev.md` puis `modules/git-github.md` si Git est concerne.
-- Demande app native/runtime : charger `modules/app-runtime.md`.
-- Demande site/dashboard/UI web : charger `modules/site-dashboard.md`.
+- Demande app native/runtime : charger `modules/app-runtime.md` et `modules/source-chat-about.md`.
+- Demande site/dashboard/UI web : charger `modules/site-dashboard.md` et `modules/source-chat-about.md`.
+- Demande blades : charger `modules/project-dev.md` et `modules/source-chat-about.md`.
 - Demande KM/veille/sources : charger `modules/km-veille.md`.
 - Demande agent/handoff/longue : charger `modules/skill-agent.md` et/ou `modules/automation.md`.
 - Demande document/livrable : charger `modules/document-report.md`.
 - Demande liste de points avec librairies : charger `modules/points-libs.md`.
+- Avant toute action Prompt Master / CTxKNL : charger d'abord Pages `latest.md`, puis Raw GitHub `latest.md`, puis local `latest.md`.

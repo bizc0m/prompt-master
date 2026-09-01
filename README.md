@@ -11,6 +11,9 @@ Architecture active :
 - `launcher.template.md` : squelette du launcher.
 - `scripts/build-launcher.sh` : genere les sorties publiques.
 
+Module obligatoire App/Blades/Dashboard :
+- `modules/source-chat-about.md` : ajoute un About referencant le chat source Codex/ChatGPT.
+
 Sorties generees :
 - `launcher.md`
 - `CTxKNL_v0.8.md`
@@ -31,7 +34,7 @@ scripts/build-launcher.sh
 - Launcher V0.8 : <https://github.com/bizc0m/prompt-master/blob/main/launcher.md>
 - CTxKNL V0.8 : <https://github.com/bizc0m/prompt-master/blob/main/CTxKNL_v0.8.md>
 - Latest brut : <https://bizc0m.github.io/prompt-master/latest.md>
-- Latest Markdown : <https://bizc0m.github.io/prompt-master/prompt.md>
+- Latest Markdown : <https://bizc0m.github.io/prompt-master/latest.md>
 - Page latest : <https://bizc0m.github.io/prompt-master/prompt.html>
 - Generateur public : <https://bizc0m.github.io/prompt-master/>
 - Versions : <https://github.com/bizc0m/prompt-master/blob/main/VERSIONS.md>
