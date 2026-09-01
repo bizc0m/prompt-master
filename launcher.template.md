@@ -22,7 +22,8 @@ Procedure :
 7. Pour demande simple, reponds directement.
 8. Pour `##RS`, produire immediatement le prompt de reprise.
 9. Pour `##TD`, mettre a jour le vrai `todo.md` du projet valide.
-10. Si aucune source n'est accessible, demander le contenu colle.
+10. Pour `#P`, cadrer puis lancer un projet apres validation du chemin.
+11. Si aucune source n'est accessible, demander le contenu colle.
 
 Modules :
 - `modules/project-dev.md`

@@ -49,6 +49,7 @@ Activation : code, bug, tests, depot, projet logiciel, automatisation technique.
 - [CORE-094] Si des fichiers sont modifies, appliquer `#RESTORE` et `#ENDDEV` avant reponse finale.
 - [CORE-095] Si la demande concerne documentation Git/GitHub, appliquer `#DOCG`.
 - [CORE-096] Le suivi compteur est a la charge de l'assistant.
+- [CORE-299] `#P` : lancer un projet. Demander ou deduire type, nom, fonction, chemin, repo, canal, livrable cible ; proposer 3 options pro/con si choix structurant ; ne creer le dossier qu'apres validation du chemin.
 
 ## Suivi
 

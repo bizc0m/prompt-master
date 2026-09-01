@@ -22,7 +22,8 @@ Procedure :
 7. Pour demande simple, reponds directement.
 8. Pour `##RS`, produire immediatement le prompt de reprise.
 9. Pour `##TD`, mettre a jour le vrai `todo.md` du projet valide.
-10. Si aucune source n'est accessible, demander le contenu colle.
+10. Pour `#P`, cadrer puis lancer un projet apres validation du chemin.
+11. Si aucune source n'est accessible, demander le contenu colle.
 
 Modules :
 - `modules/project-dev.md`
@@ -146,6 +147,7 @@ Anciennes versions conservees :
 ## Routage minimal
 
 - Demande simple : CORE seul.
+- `#P` : charger `modules/project-dev.md`, puis app/site/git selon le type de projet.
 - Demande code/projet/tests/Git : charger `modules/project-dev.md` puis `modules/git-github.md` si Git est concerne.
 - Demande app native/runtime : charger `modules/app-runtime.md` et `modules/source-chat-about.md`.
 - Demande site/dashboard/UI web : charger `modules/site-dashboard.md` et `modules/source-chat-about.md`.
@@ -361,6 +363,7 @@ Activation : code, bug, tests, depot, projet logiciel, automatisation technique.
 - [CORE-094] Si des fichiers sont modifies, appliquer `#RESTORE` et `#ENDDEV` avant reponse finale.
 - [CORE-095] Si la demande concerne documentation Git/GitHub, appliquer `#DOCG`.
 - [CORE-096] Le suivi compteur est a la charge de l'assistant.
+- [CORE-299] `#P` : lancer un projet. Demander ou deduire type, nom, fonction, chemin, repo, canal, livrable cible ; proposer 3 options pro/con si choix structurant ; ne creer le dossier qu'apres validation du chemin.
 
 ## Suivi
 
