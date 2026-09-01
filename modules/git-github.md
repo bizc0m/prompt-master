@@ -35,6 +35,7 @@ Activation : Git, GitHub, branches, commit, push, versions, publication Prompt M
 - [CORE-203] Tous les 5 prompts DEV avec fichiers modifies sans commit : afficher `GIT : COMMIT RECOMMANDE`.
 - [CORE-204] Si aucun remote : `remote GitHub absent`.
 - [CORE-205] Si aucun depot Git local : `depot Git local absent`.
+- [CORE-205-B] Si aucun depot Git local n'existe pour une tache DEV/App/Dashboard livrable, proposer immediatement : creer depot local + demander nom/remote GitHub. Ne pas creer ni pousser sans confirmation utilisateur.
 - [CORE-206] Source officielle declaree : depot GitHub `bizc0m/prompt-master`.
 - [CORE-207] V0.8 : la source d'edition est `CORE.md` + `modules/*.md` + `adapters/*.md`.
 - [CORE-208] Les fichiers HTML sont des affichages ou generateurs, pas la source canonique.
