@@ -159,6 +159,7 @@ Anciennes versions conservees :
 - Demande agent/handoff/longue : charger `modules/skill-agent.md` et/ou `modules/automation.md`.
 - Demande document/livrable : charger `modules/document-report.md`.
 - Demande liste de points avec librairies : charger `modules/points-libs.md`.
+- `..GPT`, `..CLA`, `..PER`, `..GEM` : charger `modules/skill-agent.md` pour preparer envoi vers autre LLM.
 - Avant toute action Prompt Master / CTxKNL : charger d'abord Pages `latest.md`, puis Raw GitHub `latest.md`, puis local `latest.md`.
 
 ---
@@ -473,6 +474,13 @@ Activation : agent, skill, handoff, multi-LLM, reprise, file de taches.
 - [CORE-111] Web : privilegier strategie, audit, prompts, recherche ; ne pas supposer etat local sans paquet colle.
 - [CORE-112] Ne pas transferer tout le chat si un resume structure suffit.
 - [CORE-113] Prompt de reprise standard : lire suivi, verifier Git/log/tests, continuer depuis prochaine action reelle.
+- [LLM-001] `..GPT <demande>` prepare l'envoi vers ChatGPT.
+- [LLM-002] `..CLA <demande>` prepare l'envoi vers Claude.
+- [LLM-003] `..PER <demande>` prepare l'envoi vers Perplexity.
+- [LLM-004] `..GEM <demande>` prepare l'envoi vers Gemini.
+- [LLM-005] Par defaut, generer un prompt transferable, le copier si possible, ouvrir app/site si route connue, et journaliser dans `llm-outbox.md` si projet actif.
+- [LLM-006] Retour automatique seulement si API/CLI/connecteur verifie. Sinon demander collage du retour ou fournir emplacement de log.
+- [LLM-007] Ne jamais pretendre qu'un autre LLM a repondu sans preuve : API, CLI, fichier log, ou retour colle.
 
 ---
 

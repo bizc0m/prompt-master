@@ -11,6 +11,12 @@ Architecture active :
 - `launcher.template.md` : squelette du launcher.
 - `scripts/build-launcher.sh` : genere les sorties publiques.
 
+Raccourcis LLM :
+- `..GPT <demande>` : preparer envoi ChatGPT.
+- `..CLA <demande>` : preparer envoi Claude.
+- `..PER <demande>` : preparer envoi Perplexity.
+- `..GEM <demande>` : preparer envoi Gemini.
+
 Module obligatoire App/Blades/Dashboard :
 - `modules/source-chat-about.md` : ajoute un About referencant le chat source Codex/ChatGPT.
 

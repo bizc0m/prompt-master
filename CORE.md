@@ -112,4 +112,5 @@ Anciennes versions conservees :
 - Demande agent/handoff/longue : charger `modules/skill-agent.md` et/ou `modules/automation.md`.
 - Demande document/livrable : charger `modules/document-report.md`.
 - Demande liste de points avec librairies : charger `modules/points-libs.md`.
+- `..GPT`, `..CLA`, `..PER`, `..GEM` : charger `modules/skill-agent.md` pour preparer envoi vers autre LLM.
 - Avant toute action Prompt Master / CTxKNL : charger d'abord Pages `latest.md`, puis Raw GitHub `latest.md`, puis local `latest.md`.
