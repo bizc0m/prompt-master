@@ -20,6 +20,11 @@ Raccourcis LLM :
 Module obligatoire App/Blades/Dashboard :
 - `modules/source-chat-about.md` : ajoute un About referencant le chat source Codex/ChatGPT.
 
+Module de recherche :
+- `[NYXBOOL]` : [NyxBoolean](modules/nyxboolean.md), charge pour retrouver un projet ou interpreter une requete booleenne.
+- Ordre : projet → app → dashboard → HTML → docs → code → statut Git.
+- Exemple : `Retrouve (Nyx OR NoteCortex) #DEV -cloud dans les racines autorisees.`
+
 Sorties generees :
 - `launcher.md`
 - `CTxKNL_v0.8.md`

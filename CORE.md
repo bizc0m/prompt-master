@@ -103,6 +103,7 @@ Anciennes versions conservees :
 ## Routage minimal
 
 - Demande simple : CORE seul.
+- `[NYXBOOL]`, recherche booleenne ou localisation de projet/app/dashboard/sources : charger `modules/nyxboolean.md`.
 - `#P` : charger `modules/project-dev.md`, puis app/site/git selon le type de projet.
 - Demande code/projet/tests/Git : charger `modules/project-dev.md` puis `modules/git-github.md` si Git est concerne.
 - Demande app native/runtime : charger `modules/app-runtime.md` et `modules/source-chat-about.md`.

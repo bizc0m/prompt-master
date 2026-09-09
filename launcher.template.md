@@ -36,6 +36,7 @@ Modules :
 - `modules/automation.md`
 - `modules/document-report.md`
 - `modules/points-libs.md`
+- `modules/nyxboolean.md`
 
 Adapters :
 - `adapters/chatgpt.md`
