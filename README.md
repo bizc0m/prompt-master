@@ -20,6 +20,11 @@ Raccourcis LLM :
 Module obligatoire App/Blades/Dashboard :
 - `modules/source-chat-about.md` : ajoute un About referencant le chat source Codex/ChatGPT.
 
+Modules ecosysteme NeuroForge / Nyx :
+- `modules/neuroforge.md` : creation depuis les chats, rollout, documents, pages, badges, communication et exports controles.
+- `modules/metis.md` : renseignement transversal, arbitrage global, decisions public/prive/premium/client.
+- `modules/nyx-framework.md` : Nyx Framework, modules, blades, racks, combos, panes, tabs, skins et marque blanche.
+
 Module de recherche :
 - `[NYXBOOL]` : [NyxBoolean](modules/nyxboolean.md), charge pour retrouver un projet ou interpreter une requete booleenne.
 - Ordre : projet → app → dashboard → HTML → docs → code → statut Git.

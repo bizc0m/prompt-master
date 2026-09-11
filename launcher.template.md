@@ -37,6 +37,9 @@ Modules :
 - `modules/document-report.md`
 - `modules/points-libs.md`
 - `modules/nyxboolean.md`
+- `modules/neuroforge.md`
+- `modules/metis.md`
+- `modules/nyx-framework.md`
 
 Adapters :
 - `adapters/chatgpt.md`

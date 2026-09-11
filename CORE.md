@@ -109,6 +109,9 @@ Anciennes versions conservees :
 - Demande app native/runtime : charger `modules/app-runtime.md` et `modules/source-chat-about.md`.
 - Demande site/dashboard/UI web : charger `modules/site-dashboard.md` et `modules/source-chat-about.md`.
 - Demande blades : charger `modules/project-dev.md` et `modules/source-chat-about.md`.
+- Demande NeuroForge, creation depuis chats, rollout, pages, badges ou communication produit : charger `modules/neuroforge.md`, puis `modules/git-github.md` si Git est concerne.
+- Demande Metis, renseignement transversal, arbitrage global, public/prive/premium/client : charger `modules/metis.md`.
+- Demande Nyx Framework, modules, blades, racks, combos, panes, tabs, skins ou marque blanche : charger `modules/nyx-framework.md`, puis app/site/git selon le livrable.
 - Demande KM/veille/sources : charger `modules/km-veille.md`.
 - Demande agent/handoff/longue : charger `modules/skill-agent.md` et/ou `modules/automation.md`.
 - Demande document/livrable : charger `modules/document-report.md`.
