@@ -97,6 +97,43 @@
       margin-bottom: 12px;
     }
     .section-head h2 { margin: 0; }
+    details.collapsible {
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    details.collapsible > summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      list-style: none;
+      cursor: pointer;
+    }
+    details.collapsible > summary::-webkit-details-marker {
+      display: none;
+    }
+    details.collapsible > summary::after {
+      content: "+";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--muted);
+      background: var(--panel);
+      font-weight: 900;
+    }
+    details.collapsible[open] > summary::after {
+      content: "−";
+    }
+    details.collapsible h2 {
+      margin: 0;
+    }
+    .collapsible-body {
+      padding-top: 12px;
+    }
     .copy-status {
       min-height: 20px;
       margin: 8px 0 0;
@@ -242,24 +279,29 @@
       <p class="copy-status" id="customStatus" aria-live="polite"></p>
     </section>
 
-    <section>
-      <div class="section-head">
+    <details class="collapsible">
+      <summary>
         <h2>Deeplink et bookmarklet</h2>
-        <button class="button primary" type="button" id="copyDeeplink">Copier commande</button>
-      </div>
-      <p class="help-text">Commande macOS pour ouvrir le générateur depuis un terminal, un script ou un autre LLM capable de proposer une commande.</p>
-      <pre><code id="deeplinkCommand">open "https://bizc0m.github.io/prompt-master/"</code></pre>
-      <p class="copy-status" id="deeplinkStatus" aria-live="polite"></p>
+      </summary>
+      <div class="collapsible-body">
+        <div class="section-head">
+          <span></span>
+          <button class="button primary" type="button" id="copyDeeplink">Copier commande</button>
+        </div>
+        <p class="help-text">Commande macOS pour ouvrir le générateur depuis un terminal, un script ou un autre LLM capable de proposer une commande.</p>
+        <pre><code id="deeplinkCommand">open "https://bizc0m.github.io/prompt-master/"</code></pre>
+        <p class="copy-status" id="deeplinkStatus" aria-live="polite"></p>
 
-      <p class="live-label">Bookmarklet</p>
-      <div class="actions">
-        <a class="button primary" id="bookmarkletLink" href="javascript:(()=>{window.open('https://bizc0m.github.io/prompt-master/','_blank','noopener');})();">Prompt Master</a>
-        <button class="button" type="button" id="copyBookmarklet">Copier bookmarklet</button>
+        <p class="live-label">Bookmarklet</p>
+        <div class="actions">
+          <a class="button primary" id="bookmarkletLink" href="javascript:(()=>{window.open('https://bizc0m.github.io/prompt-master/','_blank','noopener');})();">Prompt Master</a>
+          <button class="button" type="button" id="copyBookmarklet">Copier bookmarklet</button>
+        </div>
+        <p class="help-text">Glisse le bouton “Prompt Master” dans ta barre de favoris. Sinon copie le code ci-dessous dans l'URL d'un favori.</p>
+        <pre><code id="bookmarkletCode">javascript:(()=>{window.open('https://bizc0m.github.io/prompt-master/','_blank','noopener');})();</code></pre>
+        <p class="copy-status" id="bookmarkletStatus" aria-live="polite"></p>
       </div>
-      <p class="help-text">Glisse le bouton “Prompt Master” dans ta barre de favoris. Sinon copie le code ci-dessous dans l'URL d'un favori.</p>
-      <pre><code id="bookmarkletCode">javascript:(()=>{window.open('https://bizc0m.github.io/prompt-master/','_blank','noopener');})();</code></pre>
-      <p class="copy-status" id="bookmarkletStatus" aria-live="polite"></p>
-    </section>
+    </details>
 
     <section>
       <div class="section-head">
