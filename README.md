@@ -11,6 +11,9 @@ Architecture active :
 - `launcher.template.md` : squelette du launcher.
 - `scripts/build-launcher.sh` : genere les sorties publiques.
 
+Module obligatoire App/Blades/Dashboard :
+- `modules/source-chat-about.md` : ajoute un About referencant le chat source Codex/ChatGPT.
+
 Sorties generees :
 - `launcher.md`
 - `CTxKNL_v0.8.md`

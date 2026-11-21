@@ -15,7 +15,7 @@ Sources :
 Procedure :
 1. Charge CORE.
 2. Lis la demande.
-3. Choisis le mode : Chat, Dev, App, Dashboard, Doc, KM, Agent, Automation.
+3. Choisis le mode : Chat, Dev, App, Blades, Dashboard, Doc, KM, Agent, Automation.
 4. Charge seulement les modules utiles.
 5. Si un adapter correspond a l'environnement, applique-le apres les modules.
 6. Affiche les modules seulement si la demande est technique ou ambigue.
@@ -28,6 +28,7 @@ Modules :
 - `modules/project-dev.md`
 - `modules/app-runtime.md`
 - `modules/site-dashboard.md`
+- `modules/source-chat-about.md`
 - `modules/git-github.md`
 - `modules/km-veille.md`
 - `modules/skill-agent.md`

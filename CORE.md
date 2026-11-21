@@ -100,8 +100,9 @@ Anciennes versions conservees :
 
 - Demande simple : CORE seul.
 - Demande code/projet/tests/Git : charger `modules/project-dev.md` puis `modules/git-github.md` si Git est concerne.
-- Demande app native/runtime : charger `modules/app-runtime.md`.
-- Demande site/dashboard/UI web : charger `modules/site-dashboard.md`.
+- Demande app native/runtime : charger `modules/app-runtime.md` et `modules/source-chat-about.md`.
+- Demande site/dashboard/UI web : charger `modules/site-dashboard.md` et `modules/source-chat-about.md`.
+- Demande blades : charger `modules/project-dev.md` et `modules/source-chat-about.md`.
 - Demande KM/veille/sources : charger `modules/km-veille.md`.
 - Demande agent/handoff/longue : charger `modules/skill-agent.md` et/ou `modules/automation.md`.
 - Demande document/livrable : charger `modules/document-report.md`.
